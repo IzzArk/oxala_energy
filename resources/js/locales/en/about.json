@@ -1,0 +1,78 @@
+{
+    "hero": {
+        "badge": "About Us",
+        "title": "Building the Future of Energy",
+        "description": "Oxalá is an integrated energy company committed to delivering sustainable energy solutions through innovation, safety, and operational excellence."
+    },
+    "companyOverview": {
+        "title": "Who We Are",
+        "paragraph1": "For more than 25 years, Oxalá has contributed to the development of the energy industry through safe, efficient, and sustainable operations.",
+        "paragraph2": "We integrate upstream, downstream, energy distribution, and renewable energy businesses to create long-term value for customers and society."
+    },
+    "visionMission": {
+        "visionTitle": "VISION",
+        "vision": "To Become a Leading Company in Building a Sustainable Ecosystem",
+        "missionTitle": "MISSION",
+        "missions": {
+            "1": "Enhance human resource competencies based on the company's core values (AKHLAK).",
+            "2": "Deliver high-quality products and services using advanced technology and integrated systems.",
+            "3": "Strengthen financial management, risk management, and corporate governance.",
+            "4": "Optimize a well-measured business portfolio while supporting national development toward an advanced Indonesia.",
+            "5": "Expand international business networks by becoming a trusted player in the global construction market.",
+            "6": "Promote social responsibility and environmental sustainability in all business activities."
+        }
+    },
+    "coreValues": {
+        "title": "Core Values",
+        "values": {
+            "safety": "Safety First",
+            "integrity": "Integrity",
+            "innovation": "Innovation",
+            "sustainability": "Sustainability"
+        }
+    },
+    "timeline": {
+        "title": "Our Journey",
+        "history": {
+            "2001": {
+                "year": "2001",
+                "text": "The company was established."
+            },
+            "2008": {
+                "year": "2008",
+                "text": "Expanded operations nationwide."
+            },
+            "2015": {
+                "year": "2015",
+                "text": "Entered the renewable energy sector."
+            },
+            "2024": {
+                "year": "2024",
+                "text": "Began global digital transformation."
+            }
+        }
+    },
+    "leadership": {
+        "badge": "Leadership",
+        "title": "Board of Directors & Board of Commissioners",
+        "leaders": {
+            "leader1": {
+                "name": "Dr. Hendra Prasetyo",
+                "position": "President Commissioner"
+            },
+            "leader2": {
+                "name": "Arif Nugroho",
+                "position": "President Director"
+            },
+            "leader3": {
+                "name": "Rangga Wicaksana",
+                "position": "Independent Commissioner"
+            }
+        }
+    },
+    "cta": {
+        "title": "Together Towards Sustainable Energy",
+        "description": "Let's collaborate to build a more efficient and sustainable energy future.",
+        "button": "Contact Us"
+    }
+}

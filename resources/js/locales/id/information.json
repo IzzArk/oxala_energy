@@ -1,0 +1,92 @@
+{
+    "hero": {
+        "badge": "Information Disclosure",
+        "title": "Keterbukaan Informasi Perusahaan",
+        "description": "Kami menerapkan keterbukaan informasi perusahaan yang baik untuk memastikan keberlanjutan bisnis, transparansi, dan akuntabilitas kepada seluruh pemangku kepentingan."
+    },
+    "overview": {
+        "badge": "INVESTOR RELATIONS",
+        "title": "Keterbukaan Informasi",
+        "description1": "Oxalá berkomitmen menyediakan informasi yang akurat, transparan, dan tepat waktu kepada seluruh pemegang saham, investor, regulator, serta masyarakat sebagai bagian dari penerapan tata kelola perusahaan yang baik (Good Corporate Governance).",
+        "description2": "Melalui halaman Hubungan Investor, kami menyediakan laporan tahunan, laporan keuangan, kalender investor, serta berbagai dokumen penting lainnya agar para pemangku kepentingan dapat memperoleh informasi perusahaan secara mudah dan terbuka."
+    },
+    "services": {
+        "badge": "Information Disclosure",
+        "title": "Layanan Keterbukaan Informasi",
+        "description": "Kami menyediakan akses informasi yang transparan, akurat, dan tepat waktu guna mendukung kebutuhan investor, pemegang saham, regulator, serta masyarakat luas.",
+        "items": {
+            "documents": {
+                "title": "Dokumen Publik",
+                "description": "Menyediakan laporan tahunan, laporan keuangan, dan dokumen perusahaan yang dapat diakses oleh publik."
+            },
+            "calendar": {
+                "title": "Agenda Perusahaan",
+                "description": "Menyampaikan jadwal kegiatan perusahaan seperti RUPS, Public Expose, dan agenda penting lainnya."
+            },
+            "announcement": {
+                "title": "Pengumuman Resmi",
+                "description": "Menyampaikan informasi material, pengumuman, dan berita perusahaan secara tepat waktu."
+            },
+            "download": {
+                "title": "Akses Dokumen",
+                "description": "Memberikan kemudahan bagi investor dan masyarakat untuk mengunduh berbagai dokumen perusahaan."
+            }
+        }
+    },
+    "organization": {
+        "title": "Struktur Organisasi",
+        "boardTitle": "Dewan Komisaris & Direktur Utama",
+        "directorTitle": "Jajaran Direksi",
+        "board": [
+            {
+                "name": "Dr. Hendra Prasetyo",
+                "position": "Komisaris Utama"
+            },
+            {
+                "name": "Arif Nugroho",
+                "position": "Direktur Utama"
+            },
+            {
+                "name": "Rangga Wicaksana",
+                "position": "Komisaris Independen"
+            }
+        ],
+        "directors": [
+            {
+                "name": "Bima Santoso",
+                "position": "Direktur Keuangan & Manajemen Risiko"
+            },
+            {
+                "name": "Fadli Ramadhan",
+                "position": "Direktur Strategi & Pengembangan Bisnis"
+            },
+            {
+                "name": "Drs. Surya Mahendra",
+                "position": "Direktur Operasi & Infrastruktur"
+            },
+            {
+                "name": "Aditya Permana",
+                "position": "Direktur Komersial & Layanan Pelanggan"
+            },
+            {
+                "name": "Damar Prakoso",
+                "position": "Direktur Teknologi, HSSE & Digitalisasi"
+            }
+        ]
+    },
+    "documents": {
+        "badge": "Information Disclosure",
+        "title": "Dokumen Keterbukaan Informasi",
+        "description": "Kami menyediakan berbagai dokumen perusahaan sebagai bentuk komitmen terhadap keterbukaan informasi, transparansi, serta kemudahan akses bagi investor, regulator, dan masyarakat.",
+        "pdf": "Dokumen PDF",
+        "download": "Unduh Dokumen",
+        "emptyTitle": "Belum Ada Dokumen",
+        "emptyDescription": "Dokumen keterbukaan informasi akan ditampilkan setelah diunggah oleh administrator melalui CMS."
+    },
+    "cta": {
+        "title": "Komitmen Kami terhadap",
+        "highlight": "Keterbukaan Informasi",
+        "description": "Oxalá menyediakan akses informasi perusahaan secara transparan, akurat, dan mudah diakses sebagai bentuk komitmen terhadap keterbukaan kepada seluruh pemangku kepentingan.",
+        "button": "Hubungi Kami"
+    }
+}

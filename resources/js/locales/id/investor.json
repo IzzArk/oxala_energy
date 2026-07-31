@@ -1,0 +1,70 @@
+{
+    "hero": {
+        "title": "Hubungan Investor",
+        "description": "Transparansi, pertumbuhan berkelanjutan, dan penciptaan nilai jangka panjang bagi seluruh pemangku kepentingan."
+    },
+    "companyHighlights": {
+        "items": {
+            "experience": {
+                "title": "15+",
+                "subtitle": "Tahun Pengalaman"
+            },
+            "projects": {
+                "title": "20+",
+                "subtitle": "Proyek Strategis"
+            },
+            "employees": {
+                "title": "500+",
+                "subtitle": "Tenaga Profesional"
+            },
+            "governance": {
+                "title": "100%",
+                "subtitle": "Komitmen Tata Kelola"
+            }
+        }
+    },
+    "financialHighlights": {
+        "title": "Highlight Kinerja",
+        "items": {
+            "revenue": {
+                "label": "Pendapatan",
+                "value": "Rp 1,25 T"
+            },
+            "profit": {
+                "label": "Laba Bersih",
+                "value": "Rp 245 M"
+            },
+            "assets": {
+                "label": "Total Aset",
+                "value": "Rp 5,8 T"
+            },
+            "equity": {
+                "label": "Ekuitas",
+                "value": "Rp 2,9 T"
+            }
+        }
+    },
+    "annualReports": {
+        "title": "Laporan Tahunan",
+        "description": "Unduh laporan tahunan perusahaan sebagai bentuk transparansi dan akuntabilitas kepada seluruh pemangku kepentingan.",
+        "badge": "Laporan Tahunan",
+        "year": "Tahun",
+        "download": "Download",
+        "empty": {
+            "title": "Belum Ada Laporan",
+            "description": "Laporan tahunan akan tersedia setelah diunggah oleh administrator."
+        }
+    },
+    "calendar": {
+        "title": "Kalender Investor",
+        "badge": "Agenda",
+        "empty": {
+            "title": "Belum Ada Agenda",
+            "description": "Agenda investor akan ditampilkan setelah ditambahkan melalui CMS."
+        }
+    },
+    "contact": {
+        "title": "Hubungan Investor",
+        "description": "Untuk informasi lebih lanjut mengenai perusahaan dan kegiatan investor."
+    }
+}

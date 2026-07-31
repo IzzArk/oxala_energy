@@ -1,0 +1,41 @@
+{
+    "navbar": {
+        "home": "Home",
+        "about": "Tentang Kami",
+        "investor": "Hubungan Investor",
+        "information": "Keterbukaan Informasi",
+        "products": "Produk Kami",
+        "news": "Berita",
+        "contact": "Hubungi Kami",
+        "companyProfile": "Profil Perusahaan",
+        "visionMission": "Visi & Misi",
+        "board": "Dewan Direksi & Dewan Komisaris",
+        "annualReport": "Laporan Tahunan",
+        "investorCalendar": "Kalender Investor",
+        "organization": "Struktur Organisasi",
+        "documents": "Dokumen Informasi"
+    },
+    "footer": {
+        "description": "Perusahaan energi terintegrasi global yang berfokus pada keunggulan operasional dan keberlanjutan masa depan.",
+        "navigation": "Navigasi",
+        "corporate": "Korporasi",
+        "contact": "Hubungi Kami",
+        "home": "Beranda",
+        "about": "Tentang Kami",
+        "information": "Keterbukaan Informasi",
+        "news": "Berita",
+        "products": "Produk Kami",
+        "investor": "Hubungan Investor",
+        "contactUs": "HUBUNGI KAMI",
+        "address": "Menara Oxalá, Lantai 40\nKawasan Industri Sudirman\nJakarta",
+        "email": "corporate@oxala-energy.com",
+        "copyright": "© 2026 Oxalá Energy & Infrastructure. All Rights Reserved.",
+        "privacy": "Kebijakan Privasi",
+        "terms": "Syarat & Ketentuan",
+        "ethics": "Etika Bisnis"
+    },
+    "language": {
+        "id": "Indonesia",
+        "en": "English"
+    }
+}

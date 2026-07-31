@@ -1,0 +1,92 @@
+{
+    "hero": {
+        "badge": "Information Disclosure",
+        "title": "Corporate Information Disclosure",
+        "description": "We implement transparent corporate information disclosure practices to ensure business sustainability, transparency, and accountability to all stakeholders."
+    },
+    "overview": {
+        "badge": "INVESTOR RELATIONS",
+        "title": "Information Disclosure",
+        "description1": "Oxalá is committed to providing accurate, transparent, and timely information to shareholders, investors, regulators, and the public as part of our implementation of Good Corporate Governance.",
+        "description2": "Through our Investor Relations page, we provide annual reports, financial reports, investor calendars, and other important corporate documents to ensure stakeholders have easy and transparent access to company information."
+    },
+    "services": {
+        "badge": "Information Disclosure",
+        "title": "Information Disclosure Services",
+        "description": "We provide transparent, accurate, and timely access to information to support the needs of investors, shareholders, regulators, and the wider public.",
+        "items": {
+            "documents": {
+                "title": "Public Documents",
+                "description": "Providing annual reports, financial statements, and corporate documents accessible to the public."
+            },
+            "calendar": {
+                "title": "Corporate Events",
+                "description": "Publishing schedules for Annual General Meetings, Public Exposés, and other important corporate events."
+            },
+            "announcement": {
+                "title": "Official Announcements",
+                "description": "Delivering material information, corporate announcements, and company news in a timely manner."
+            },
+            "download": {
+                "title": "Document Access",
+                "description": "Providing convenient access for investors and the public to download various corporate documents."
+            }
+        }
+    },
+    "organization": {
+        "title": "Organizational Structure",
+        "boardTitle": "Board of Commissioners & President Director",
+        "directorTitle": "Board of Directors",
+        "board": [
+            {
+                "name": "Dr. Hendra Prasetyo",
+                "position": "President Commissioner"
+            },
+            {
+                "name": "Arif Nugroho",
+                "position": "President Director"
+            },
+            {
+                "name": "Rangga Wicaksana",
+                "position": "Independent Commissioner"
+            }
+        ],
+        "directors": [
+            {
+                "name": "Bima Santoso",
+                "position": "Finance & Risk Management Director"
+            },
+            {
+                "name": "Fadli Ramadhan",
+                "position": "Strategy & Business Development Director"
+            },
+            {
+                "name": "Drs. Surya Mahendra",
+                "position": "Operations & Infrastructure Director"
+            },
+            {
+                "name": "Aditya Permana",
+                "position": "Commercial & Customer Services Director"
+            },
+            {
+                "name": "Damar Prakoso",
+                "position": "Technology, HSSE & Digitalization Director"
+            }
+        ]
+    },
+    "documents": {
+        "badge": "Information Disclosure",
+        "title": "Information Disclosure Documents",
+        "description": "We provide various corporate documents as part of our commitment to transparency, accountability, and easy access to information for investors, regulators, and the public.",
+        "pdf": "PDF Document",
+        "download": "Download Document",
+        "emptyTitle": "No Documents Available",
+        "emptyDescription": "Information disclosure documents will be available once uploaded by the administrator through the CMS."
+    },
+    "cta": {
+        "title": "Our Commitment to",
+        "highlight": "Information Disclosure",
+        "description": "Oxalá provides transparent, accurate, and easily accessible corporate information as part of our commitment to openness and accountability for all stakeholders.",
+        "button": "Contact Us"
+    }
+}

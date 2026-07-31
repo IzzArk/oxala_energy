@@ -1,0 +1,79 @@
+{
+    "hero": {
+        "badge": "Perusahaan Energi Global",
+        "title1": "Menggerakkan",
+        "title2": "Masa Depan",
+        "titleHighlight": "Energi Berkelanjutan",
+        "description": "Oxala menghadirkan solusi energi, infrastruktur, dan teknologi modern untuk mendukung ketahanan energi nasional serta transisi menuju masa depan yang lebih berkelanjutan.",
+        "productButton": "Produk Kami",
+        "contactButton": "Hubungi Kami",
+        "scroll": "Scroll"
+    },
+    "carbonCredit": {
+        "badge": "Program Keberlanjutan",
+        "title": "Carbon Credit & \nRenewable Energy",
+        "description": "Oxala berkomitmen mempercepat transisi energi melalui pengembangan proyek renewable energy, carbon offset, dan implementasi prinsip ESG untuk mendukung keberlanjutan bisnis dan lingkungan.",
+        "button": "Pelajari Selengkapnya",
+        "floating": {
+            "badge": "Keberlanjutan",
+            "title": "Net Zero 2060",
+            "description": "Mendukung transformasi menuju energi yang lebih hijau dan berkelanjutan."
+        },
+        "items": {
+            "carbon": {
+                "title": "Carbon Credit",
+                "description": "Mendukung pengurangan emisi karbon melalui proyek karbon yang memenuhi standar internasional."
+            },
+            "renewable": {
+                "title": "Renewable Energy",
+                "description": "Pengembangan energi surya, biomassa, serta solusi energi bersih untuk masa depan."
+            },
+            "esg": {
+                "title": "Komitmen ESG",
+                "description": "Mengintegrasikan prinsip Environmental, Social & Governance dalam setiap kegiatan perusahaan."
+            }
+        }
+    },
+    "services": {
+        "title": "Layanan Unggulan Kami",
+        "exploration": {
+            "title": "Eksplorasi & Produksi",
+            "description": "Memanfaatkan teknologi survei geologi mutakhir untuk ekstraksi sumber daya yang efisien dan bertanggung jawab."
+        },
+        "renewable": {
+            "title": "Energi Terbarukan",
+            "description": "Transisi energi melalui investasi besar pada tenaga surya, angin, dan infrastruktur hidrogen hijau."
+        },
+        "distribution": {
+            "title": "Distribusi Global",
+            "description": "Jaringan logistik lintas benua yang memastikan pengiriman energi yang aman dan tepat waktu."
+        },
+        "technology": {
+            "title": "Teknologi Operasi",
+            "description": "Implementasi IoT dan AI untuk pemantauan real-time pusat operasi energi."
+        }
+    },
+    "advantages": {
+        "badge": "Mengapa Memilih Kami",
+        "title": "Keunggulan Operasional Oxalá",
+        "items": {
+            "safety": {
+                "title": "Standar Keamanan Utama",
+                "description": "Kami menerapkan protokol HSSE paling ketat di seluruh fasilitas global kami."
+            },
+            "technology": {
+                "title": "Inovasi Teknologi",
+                "description": "Investasi berkelanjutan pada R&D untuk menemukan metode ekstraksi yang lebih efisien."
+            },
+            "sustainability": {
+                "title": "Komitmen Keberlanjutan",
+                "description": "Menyeimbangkan kebutuhan energi hari ini dengan tanggung jawab lingkungan."
+            }
+        }
+    },
+    "cta": {
+        "title": "Bermitra untuk Masa Depan Energi",
+        "description": "Hubungi tim ahli kami untuk mendiskusikan bagaimana Oxalá dapat mendukung kebutuhan energi dan infrastruktur perusahaan Anda.",
+        "button": "Hubungi Kami Hari Ini"
+    }
+}

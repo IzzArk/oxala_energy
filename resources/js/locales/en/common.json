@@ -1,0 +1,41 @@
+{
+    "navbar": {
+        "home": "Home",
+        "about": "About Us",
+        "investor": "Investor Relations",
+        "information": "Information Disclosure",
+        "products": "Products",
+        "news": "News",
+        "contact": "Contact Us",
+        "companyProfile": "Company Profile",
+        "visionMission": "Vision & Mission",
+        "board": "Board of Directors & Commissioners",
+        "annualReport": "Annual Report",
+        "investorCalendar": "Investor Calendar",
+        "organization": "Organization Structure",
+        "documents": "Information Documents"
+    },
+    "footer": {
+        "description": "A global integrated energy company focusing on operational excellence and long-term sustainability.",
+        "navigation": "Navigation",
+        "corporate": "Corporate",
+        "contact": "Contact Us",
+        "home": "Home",
+        "about": "About Us",
+        "information": "Information Disclosure",
+        "news": "News",
+        "products": "Products",
+        "investor": "Investor Relations",
+        "contactUs": "CONTACT US",
+        "address": "Oxalá Tower, 40th Floor\nSudirman Industrial Area\nJakarta",
+        "email": "corporate@oxala-energy.com",
+        "copyright": "© 2026 Oxalá Energy & Infrastructure. All Rights Reserved.",
+        "privacy": "Privacy Policy",
+        "terms": "Terms & Conditions",
+        "ethics": "Business Ethics"
+    },
+    "language": {
+        "id": "Indonesian",
+        "en": "English"
+    }
+}

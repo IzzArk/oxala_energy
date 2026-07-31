@@ -1,0 +1,62 @@
+{
+    "hero": {
+        "badge": "Hubungi Kami",
+        "title": "Hubungi Kami",
+        "description": "Kami siap membantu kebutuhan bisnis dan menjawab pertanyaan Anda."
+    },
+    "info": {
+        "title": "Informasi Kontak",
+        "description": "Hubungi kami melalui informasi berikut. Tim kami siap membantu menjawab pertanyaan maupun kebutuhan bisnis Anda.",
+        "items": {
+            "address": {
+                "title": "Alamat",
+                "value": "Jakarta Selatan, DKI Jakarta, Indonesia"
+            },
+            "phone": {
+                "title": "Telepon",
+                "value": "+62 21 1234 5678"
+            },
+            "email": {
+                "title": "Email",
+                "value": "info@oxala.co.id"
+            },
+            "hours": {
+                "title": "Jam Operasional",
+                "value": "Senin - Jumat 08:00 - 17:00"
+            }
+        }
+    },
+    "form": {
+        "badge": "Hubungi Kami",
+        "title": "Kirim Pesan",
+        "description": "Isi formulir berikut dan tim kami akan segera menghubungi Anda untuk memberikan informasi yang dibutuhkan.",
+        "placeholder": {
+            "name": "Nama Lengkap",
+            "email": "Email",
+            "subject": "Subjek",
+            "message": "Pesan"
+        },
+        "button": {
+            "send": "Kirim Pesan",
+            "sending": "Mengirim..."
+        },
+        "alert": {
+            "success": {
+                "title": "Pesan Berhasil Dikirim",
+                "text": "Terima kasih, pesan Anda telah kami terima.",
+                "button": "OK"
+            },
+            "error": {
+                "title": "Gagal Mengirim",
+                "text": "Silakan periksa kembali data yang Anda masukkan."
+            }
+        }
+    },
+    "location": {
+        "title": "Lokasi Kantor"
+    },
+    "cta": {
+        "title": "Mari Berkolaborasi",
+        "description": "Bersama membangun solusi terbaik untuk masa depan."
+    }
+}

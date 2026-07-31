@@ -1,0 +1,49 @@
+{
+    "hero": {
+        "badge": "Our Products",
+        "title": "Integrated Energy Products & Solutions",
+        "description": "Providing energy, infrastructure, and technology solutions that support the needs of modern industries in a sustainable manner."
+    },
+    "categories": {
+        "title": "Products & Services",
+        "description": "We provide a wide range of products and services that support the energy, industrial, and logistics sectors while prioritizing quality, reliability, and sustainability.",
+        "items": {
+            "renewable": {
+                "title": "Renewable Energy",
+                "description": "Delivering sustainable renewable energy solutions through power generation, solar energy, and environmentally friendly technologies to support the future energy transition."
+            },
+            "pipeline": {
+                "title": "Pipeline",
+                "description": "Providing pipeline products and services for the energy, industrial, and infrastructure sectors with high standards of quality and safety."
+            },
+            "logistic": {
+                "title": "Logistics",
+                "description": "Integrated logistics services supporting goods distribution, project delivery, and supply chain operations efficiently, securely, and on schedule."
+            }
+        }
+    },
+    "solutions": {
+        "title": "Solutions We Offer",
+        "items": [
+            "Energy Exploration & Production",
+            "Infrastructure Management",
+            "Operational Digitalization",
+            "Renewable Energy",
+            "Energy Supply Chain",
+            "Strategic Consulting"
+        ]
+    },
+    "advantages": {
+        "title": "Why Choose Oxala",
+        "items": {
+            "safety": "High Safety Standards",
+            "technology": "Modern Technology",
+            "environment": "Environmentally Friendly"
+        }
+    },
+    "cta": {
+        "title": "Looking for Energy Solutions for Your Business?",
+        "description": "Contact our team for consultation and discover the right solution for your business needs.",
+        "button": "Contact Us"
+    }
+}

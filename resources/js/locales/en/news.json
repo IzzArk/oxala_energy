@@ -1,0 +1,11 @@
+{
+    "hero": {
+        "badge": "News & Updates",
+        "title": "Company News",
+        "description": "Stay updated with the latest company activities, achievements, and business developments."
+    },
+    "cta": {
+        "title": "Stay Connected",
+        "description": "Keep up with the latest updates and news from our company."
+    }
+}

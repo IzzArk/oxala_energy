@@ -1,0 +1,78 @@
+{
+    "hero": {
+        "badge": "Tentang Kami",
+        "title": "Membangun Masa Depan Energi",
+        "description": "Oxalá adalah perusahaan energi terintegrasi yang berkomitmen menghadirkan solusi energi berkelanjutan melalui inovasi, keselamatan, dan keunggulan operasional."
+    },
+    "companyOverview": {
+        "title": "Siapa Kami",
+        "paragraph1": "Selama lebih dari 25 tahun, Oxalá telah berkontribusi dalam pengembangan industri energi melalui operasi yang aman, efisien, dan berkelanjutan.",
+        "paragraph2": "Kami mengintegrasikan sektor hulu, hilir, distribusi energi, dan energi terbarukan untuk menciptakan nilai jangka panjang bagi pelanggan dan masyarakat."
+    },
+    "visionMission": {
+        "visionTitle": "VISI",
+        "vision": "Perusahaan Terdepan Dalam Membangun Ekosistem Yang Berkelanjutan",
+        "missionTitle": "MISI",
+        "missions": {
+            "1": "Meningkatkan Kompetensi Sumber Daya Manusia Berlandaskan Nilai Inti Perusahaan AKHLAK",
+            "2": "Menghadirkan Produk dan Jasa Berkualitas Terbaik Dengan Menggunakan Teknologi Terkini dan Sistem Terintegrasi",
+            "3": "Memperkuat Pengelolaan Keuangan, Manajemen Risiko, dan Tata Kelola Perusahaan",
+            "4": "Mengoptimalkan Portofolio Bisnis yang Tepat dan Terukur serta Menjadi Agen Pembangunan Pemerintah Menuju Indonesia Maju",
+            "5": "Memperluas Jaringan Bisnis Internasional Dengan Menjadi Pemain Handal di Pasar Konstruksi Global",
+            "6": "Memperhatikan Kepedulian Sosial dan Keseimbangan Lingkungan Dalam Aktivitas Bisnis Perusahaan"
+        }
+    },
+    "coreValues": {
+        "title": "Nilai Perusahaan",
+        "values": {
+            "safety": "Keselamatan Utama",
+            "integrity": "Integritas",
+            "innovation": "Inovasi",
+            "sustainability": "Keberlanjutan"
+        }
+    },
+    "timeline": {
+        "title": "Perjalanan Kami",
+        "history": {
+            "2001": {
+                "year": "2001",
+                "text": "Perusahaan didirikan."
+            },
+            "2008": {
+                "year": "2008",
+                "text": "Ekspansi nasional."
+            },
+            "2015": {
+                "year": "2015",
+                "text": "Masuk energi terbarukan."
+            },
+            "2024": {
+                "year": "2024",
+                "text": "Transformasi digital global."
+            }
+        }
+    },
+    "leadership": {
+        "badge": "Kepemimpinan",
+        "title": "Dewan Direksi & Dewan Komisaris",
+        "leaders": {
+            "leader1": {
+                "name": "Dr. Hendra Prasetyo",
+                "position": "Komisaris Utama"
+            },
+            "leader2": {
+                "name": "Arif Nugroho",
+                "position": "Direktur Utama"
+            },
+            "leader3": {
+                "name": "Rangga Wicaksana",
+                "position": "Komisaris Independen"
+            }
+        }
+    },
+    "cta": {
+        "title": "Bersama Menuju Energi Berkelanjutan",
+        "description": "Mari berkolaborasi membangun masa depan energi yang lebih efisien dan berkelanjutan.",
+        "button": "Hubungi Kami"
+    }
+}

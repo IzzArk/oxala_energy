@@ -1,0 +1,70 @@
+{
+    "hero": {
+        "title": "Investor Relations",
+        "description": "Transparency, sustainable growth, and long-term value creation for all stakeholders."
+    },
+    "companyHighlights": {
+        "items": {
+            "experience": {
+                "title": "15+",
+                "subtitle": "Years of Experience"
+            },
+            "projects": {
+                "title": "20+",
+                "subtitle": "Strategic Projects"
+            },
+            "employees": {
+                "title": "500+",
+                "subtitle": "Professional Employees"
+            },
+            "governance": {
+                "title": "100%",
+                "subtitle": "Governance Commitment"
+            }
+        }
+    },
+    "financialHighlights": {
+        "title": "Financial Highlights",
+        "items": {
+            "revenue": {
+                "label": "Revenue",
+                "value": "Rp 1.25 T"
+            },
+            "profit": {
+                "label": "Net Profit",
+                "value": "Rp 245 B"
+            },
+            "assets": {
+                "label": "Total Assets",
+                "value": "Rp 5.8 T"
+            },
+            "equity": {
+                "label": "Equity",
+                "value": "Rp 2.9 T"
+            }
+        }
+    },
+    "annualReports": {
+        "title": "Annual Reports",
+        "description": "Download the company's annual reports as part of our commitment to transparency and accountability for all stakeholders.",
+        "badge": "Annual Report",
+        "year": "Year",
+        "download": "Download",
+        "empty": {
+            "title": "No Reports Available",
+            "description": "Annual reports will be available once uploaded by the administrator."
+        }
+    },
+    "calendar": {
+        "title": "Investor Calendar",
+        "badge": "Event",
+        "empty": {
+            "title": "No Events Available",
+            "description": "Investor events will appear here after being added through the CMS."
+        }
+    },
+    "contact": {
+        "title": "Investor Relations",
+        "description": "For further information regarding the company and investor-related activities."
+    }
+}

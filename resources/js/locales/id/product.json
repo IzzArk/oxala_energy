@@ -1,0 +1,49 @@
+{
+    "hero": {
+        "badge": "Produk Kami",
+        "title": "Produk & Solusi Energi Terintegrasi",
+        "description": "Menyediakan solusi energi, infrastruktur, dan teknologi yang mendukung kebutuhan industri modern secara berkelanjutan."
+    },
+    "categories": {
+        "title": "Produk & Layanan",
+        "description": "Kami menghadirkan berbagai produk dan layanan yang mendukung kebutuhan sektor energi, industri, dan logistik dengan mengedepankan kualitas, keandalan, serta keberlanjutan.",
+        "items": {
+            "renewable": {
+                "title": "Renewable Energy",
+                "description": "Menyediakan solusi energi terbarukan yang berkelanjutan melalui pengembangan pembangkit listrik, energi surya, dan teknologi ramah lingkungan untuk mendukung transisi energi masa depan."
+            },
+            "pipeline": {
+                "title": "Pipa",
+                "description": "Menyediakan berbagai produk dan layanan sistem perpipaan untuk sektor energi, industri, dan infrastruktur dengan standar kualitas serta keamanan yang tinggi."
+            },
+            "logistic": {
+                "title": "Logistik",
+                "description": "Layanan logistik terpadu yang mendukung distribusi barang, pengiriman proyek, serta rantai pasok secara efisien, aman, dan tepat waktu."
+            }
+        }
+    },
+    "solutions": {
+        "title": "Solusi yang Kami Tawarkan",
+        "items": [
+            "Eksplorasi & Produksi Energi",
+            "Pengelolaan Infrastruktur",
+            "Digitalisasi Operasional",
+            "Energi Terbarukan",
+            "Supply Chain Energi",
+            "Konsultasi Strategis"
+        ]
+    },
+    "advantages": {
+        "title": "Mengapa Memilih Oxala",
+        "items": {
+            "safety": "Keamanan Tinggi",
+            "technology": "Teknologi Modern",
+            "environment": "Ramah Lingkungan"
+        }
+    },
+    "cta": {
+        "title": "Butuh Solusi Energi untuk Bisnis Anda?",
+        "description": "Hubungi tim kami untuk konsultasi dan mendapatkan solusi yang sesuai.",
+        "button": "Hubungi Kami"
+    }
+}

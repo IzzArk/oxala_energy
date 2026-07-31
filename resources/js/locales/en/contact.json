@@ -1,0 +1,62 @@
+{
+    "hero": {
+        "badge": "Contact Us",
+        "title": "Contact Us",
+        "description": "We're ready to support your business needs and answer your questions."
+    },
+    "info": {
+        "title": "Contact Information",
+        "description": "Reach out to us using the information below. Our team is ready to assist with your inquiries and business needs.",
+        "items": {
+            "address": {
+                "title": "Address",
+                "value": "South Jakarta, Jakarta, Indonesia"
+            },
+            "phone": {
+                "title": "Phone",
+                "value": "+62 21 1234 5678"
+            },
+            "email": {
+                "title": "Email",
+                "value": "info@oxala.co.id"
+            },
+            "hours": {
+                "title": "Business Hours",
+                "value": "Monday - Friday, 08:00 AM - 05:00 PM"
+            }
+        }
+    },
+    "form": {
+        "badge": "Get In Touch",
+        "title": "Send a Message",
+        "description": "Complete the form below and our team will contact you as soon as possible with the information you need.",
+        "placeholder": {
+            "name": "Full Name",
+            "email": "Email",
+            "subject": "Subject",
+            "message": "Message"
+        },
+        "button": {
+            "send": "Send Message",
+            "sending": "Sending..."
+        },
+        "alert": {
+            "success": {
+                "title": "Message Sent Successfully",
+                "text": "Thank you. We have received your message.",
+                "button": "OK"
+            },
+            "error": {
+                "title": "Failed to Send Message",
+                "text": "Please review your information and try again."
+            }
+        }
+    },
+    "location": {
+        "title": "Office Location"
+    },
+    "cta": {
+        "title": "Let's Collaborate",
+        "description": "Working together to build the best solutions for the future."
+    }
+}

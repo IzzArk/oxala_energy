@@ -1,0 +1,79 @@
+{
+    "hero": {
+        "badge": "Global Energy Company",
+        "title1": "Powering",
+        "title2": "The Future of",
+        "titleHighlight": "Sustainable Energy",
+        "description": "Oxala delivers modern energy, infrastructure, and technology solutions to strengthen national energy resilience and accelerate the transition toward a more sustainable future.",
+        "productButton": "Our Products",
+        "contactButton": "Contact Us",
+        "scroll": "Scroll"
+    },
+    "carbonCredit": {
+        "badge": "Sustainability Program",
+        "title": "Carbon Credit & \nRenewable Energy",
+        "description": "Oxala is committed to accelerating the energy transition through renewable energy projects, carbon offset initiatives, and ESG implementation to support long-term business and environmental sustainability.",
+        "button": "Learn More",
+        "floating": {
+            "badge": "Sustainability",
+            "title": "Net Zero 2060",
+            "description": "Supporting the transition toward a greener and more sustainable future."
+        },
+        "items": {
+            "carbon": {
+                "title": "Carbon Credit",
+                "description": "Supporting carbon emission reduction through internationally certified carbon projects."
+            },
+            "renewable": {
+                "title": "Renewable Energy",
+                "description": "Developing solar energy, biomass, and clean energy solutions for a sustainable future."
+            },
+            "esg": {
+                "title": "ESG Commitment",
+                "description": "Integrating Environmental, Social, and Governance principles into every aspect of our business operations."
+            }
+        }
+    },
+    "services": {
+        "title": "Our Core Services",
+        "exploration": {
+            "title": "Exploration & Production",
+            "description": "Leveraging advanced geological survey technologies to ensure efficient and responsible resource extraction."
+        },
+        "renewable": {
+            "title": "Renewable Energy",
+            "description": "Driving the energy transition through investments in solar power, wind energy, and green hydrogen infrastructure."
+        },
+        "distribution": {
+            "title": "Global Distribution",
+            "description": "A global logistics network ensuring safe, reliable, and timely energy distribution."
+        },
+        "technology": {
+            "title": "Operational Technology",
+            "description": "Implementing IoT and AI technologies for real-time monitoring and optimization of energy operations."
+        }
+    },
+    "advantages": {
+        "badge": "Why Choose Us",
+        "title": "Operational Excellence",
+        "items": {
+            "safety": {
+                "title": "Industry-Leading Safety Standards",
+                "description": "We implement the highest HSSE standards across all our facilities to ensure operational safety and reliability."
+            },
+            "technology": {
+                "title": "Technological Innovation",
+                "description": "Continuous investment in research and development to create more efficient and sustainable energy solutions."
+            },
+            "sustainability": {
+                "title": "Sustainability Commitment",
+                "description": "Balancing today's energy demands with long-term environmental responsibility."
+            }
+        }
+    },
+    "cta": {
+        "title": "Partner with Us for the Future of Energy",
+        "description": "Get in touch with our experts to discover how Oxala can support your energy and infrastructure needs.",
+        "button": "Contact Us Today"
+    }
+}
