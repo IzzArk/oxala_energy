@@ -6,7 +6,7 @@ export default function Index({ documents }) {
 
     return (
         <>
-            <Head title="Dokumen Tata Kelola" />
+            <Head title="Dokumen Keterbukaan Informasi" />
             <AdminLayout>
 
 
@@ -16,7 +16,7 @@ export default function Index({ documents }) {
 
                         <div>
                             <h1 className="text-2xl font-bold">
-                                Dokumen Tata Kelola
+                                Dokumen Keterbukaan Informasi
                             </h1>
 
                             <p className="text-gray-500 mt-1">

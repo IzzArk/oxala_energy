@@ -1,70 +1,73 @@
 {
     "hero": {
-        "title": "Investor Relations",
-        "description": "Transparency, sustainable growth, and long-term value creation for all stakeholders."
+        "badge": "Investor Relations",
+        "title": "Transparency & Accountability for All Stakeholders",
+        "description": "Transparency, sustainable growth, and long-term value creation."
     },
     "companyHighlights": {
         "items": {
-            "experience": {
+            "stockCode": {
+                "title": "PIPA",
+                "subtitle": "IDX Stock Code"
+            },
+            "listingYear": {
+                "title": "2023",
+                "subtitle": "Year Listed on IDX"
+            },
+            "shareComposition": {
+                "title": "49.92% / 50.08%",
+                "subtitle": "Shareholding Composition (MCI / Public)"
+            },
+            "companyExperience": {
                 "title": "15+",
                 "subtitle": "Years of Experience"
-            },
-            "projects": {
-                "title": "20+",
-                "subtitle": "Strategic Projects"
-            },
-            "employees": {
-                "title": "500+",
-                "subtitle": "Professional Employees"
-            },
-            "governance": {
-                "title": "100%",
-                "subtitle": "Governance Commitment"
             }
-        }
+        },
+        "informationNote": "Company information is updated regularly based on disclosures published to the Indonesia Stock Exchange (IDX) and the Company's official sources. Shareholding composition may change from time to time following corporate actions."
     },
     "financialHighlights": {
         "title": "Financial Highlights",
         "items": {
             "revenue": {
-                "label": "Revenue",
-                "value": "Rp 1.25 T"
+                "label": "FY2025 Net Sales",
+                "value": "IDR 23.86 B"
             },
             "profit": {
-                "label": "Net Profit",
-                "value": "Rp 245 B"
+                "label": "FY2025 Net Loss for the Year",
+                "value": "IDR 17.56 B"
             },
             "assets": {
-                "label": "Total Assets",
-                "value": "Rp 5.8 T"
+                "label": "Total Assets as of Dec 31, 2025",
+                "value": "IDR 99.70 B"
             },
             "equity": {
-                "label": "Equity",
-                "value": "Rp 2.9 T"
+                "label": "Total Equity as of Dec 31, 2025",
+                "value": "IDR 64.62 B"
             }
-        }
+        },
+        "informationNote": "Figures are presented in billions of Indonesian Rupiah (IDR) and are taken directly from the audited Consolidated Financial Statements for the fiscal year ended 2025. The Company reported a net loss for the year, primarily due to opening balance adjustments (prior period reclassification) in accordance with PSAK 25, as disclosed in the financial statements. The reported net loss is presented without modification to maintain compliance with the Company's commitment to transparency and public disclosure."
     },
     "annualReports": {
         "title": "Annual Reports",
-        "description": "Download the company's annual reports as part of our commitment to transparency and accountability for all stakeholders.",
-        "badge": "Annual Report",
+        "description": "Download the Company's annual reports as part of our commitment to transparency and accountability to all stakeholders.",
+        "badge": "Annual Reports",
         "year": "Year",
         "download": "Download",
         "empty": {
             "title": "No Reports Available",
-            "description": "Annual reports will be available once uploaded by the administrator."
+            "description": "Annual reports will be available once they have been uploaded by the administrator."
         }
     },
     "calendar": {
         "title": "Investor Calendar",
-        "badge": "Event",
+        "badge": "Events",
         "empty": {
             "title": "No Events Available",
-            "description": "Investor events will appear here after being added through the CMS."
+            "description": "Investor events will appear here once they have been added through the CMS."
         }
     },
     "contact": {
         "title": "Investor Relations",
-        "description": "For further information regarding the company and investor-related activities."
+        "description": "For further information regarding the Company and investor-related matters."
     }
 }

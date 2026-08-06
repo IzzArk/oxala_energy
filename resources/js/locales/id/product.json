@@ -8,30 +8,64 @@
         "title": "Produk & Layanan",
         "description": "Kami menghadirkan berbagai produk dan layanan yang mendukung kebutuhan sektor energi, industri, dan logistik dengan mengedepankan kualitas, keandalan, serta keberlanjutan.",
         "items": {
-            "renewable": {
-                "title": "Renewable Energy",
-                "description": "Menyediakan solusi energi terbarukan yang berkelanjutan melalui pengembangan pembangkit listrik, energi surya, dan teknologi ramah lingkungan untuk mendukung transisi energi masa depan."
-            },
             "pipeline": {
-                "title": "Pipa",
-                "description": "Menyediakan berbagai produk dan layanan sistem perpipaan untuk sektor energi, industri, dan infrastruktur dengan standar kualitas serta keamanan yang tinggi."
+                "title": "Manufaktur",
+                "subtitle": "Pipa & Material Bangunan - sejak 2005",
+                "features": [
+                    "Pipa PVC & Pipa HDPE",
+                    "Fitting PVC & PVC Roofing",
+                    "Lem PVC & Houseware",
+                    "Distribusi: Jawa, Sumatera, Bali, Sulawesi"
+                ],
+                "tags": [
+                    "Supernova",
+                    "Greenlon",
+                    "Intraplas",
+                    "Marlon",
+                    "Daichi",
+                    "+15 Brand Lain"
+                ]
+            },
+            "renewable": {
+                "title": "Energi, Logistik & Infrastruktur",
+                "subtitle": "Trading · Investasi · Operasi & Perawatan",
+                "features": [
+                    "Trading BBM (Industrial Bio Diesel)",
+                    "Investasi Infrastruktur Energi & Oil & Gas"
+                ],
+                "tags": [
+                    "Fuel Trading",
+                    "Energy Investment"
+                ]
             },
             "logistic": {
-                "title": "Logistik",
-                "description": "Layanan logistik terpadu yang mendukung distribusi barang, pengiriman proyek, serta rantai pasok secara efisien, aman, dan tepat waktu."
+                "features": [
+                    "Pengoperasian Logistik Energi untuk Distribusi Darat maupun Laut",
+                    "Fasilitas Gas Metering Processing (On Process)"
+                ],
+                "tags": [
+                    "Marine Logistics",
+                    "Gas Metering"
+                ]
             }
         }
     },
     "solutions": {
         "title": "Solusi yang Kami Tawarkan",
-        "items": [
-            "Eksplorasi & Produksi Energi",
-            "Pengelolaan Infrastruktur",
-            "Digitalisasi Operasional",
-            "Energi Terbarukan",
-            "Supply Chain Energi",
-            "Konsultasi Strategis"
-        ]
+        "items": {
+            "trading": {
+                "title": "Trading",
+                "description": "Distribusi bahan bakar & komoditas energi ke industri dan mitra usaha."
+            },
+            "investment": {
+                "title": "Investasi",
+                "description": "Penyertaan pada infrastruktur energi, oil & gas, dan energi terbarukan."
+            },
+            "operation": {
+                "title": "Operasi & Perawatan",
+                "description": "Pengelolaan armada dan fasilitas energi secara aman dan efisien."
+            }
+        }
     },
     "advantages": {
         "title": "Mengapa Memilih Oxala",

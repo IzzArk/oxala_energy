@@ -24,6 +24,10 @@ export default function InvestorHero() {
 
             <div className="max-w-7xl mx-auto px-6 text-center">
 
+                <span className="uppercase tracking-widest text-blue-200">
+                    {t("investor:hero.badge")}
+                </span>
+
                 <h1 className="text-4xl md:text-6xl font-bold mt-4">
                     {t("investor:hero.title")}
                 </h1>

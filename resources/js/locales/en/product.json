@@ -8,30 +8,64 @@
         "title": "Products & Services",
         "description": "We provide a wide range of products and services that support the energy, industrial, and logistics sectors while prioritizing quality, reliability, and sustainability.",
         "items": {
-            "renewable": {
-                "title": "Renewable Energy",
-                "description": "Delivering sustainable renewable energy solutions through power generation, solar energy, and environmentally friendly technologies to support the future energy transition."
-            },
             "pipeline": {
-                "title": "Pipeline",
-                "description": "Providing pipeline products and services for the energy, industrial, and infrastructure sectors with high standards of quality and safety."
+                "title": "Manufacturing",
+                "subtitle": "Pipes & Building Materials - Since 2005",
+                "features": [
+                    "PVC & HDPE Pipes",
+                    "PVC Fittings & PVC Roofing",
+                    "PVC Adhesives & Houseware",
+                    "Distribution: Java, Sumatra, Bali & Sulawesi"
+                ],
+                "tags": [
+                    "Supernova",
+                    "Greenlon",
+                    "Intraplas",
+                    "Marlon",
+                    "Daichi",
+                    "15+ More Brands"
+                ]
+            },
+            "renewable": {
+                "title": "Energy, Logistics & Infrastructure",
+                "subtitle": "Trading · Investment · Operations & Maintenance",
+                "features": [
+                    "Fuel Trading (Industrial Biodiesel)",
+                    "Energy Infrastructure & Oil & Gas Investment"
+                ],
+                "tags": [
+                    "Fuel Trading",
+                    "Energy Investment"
+                ]
             },
             "logistic": {
-                "title": "Logistics",
-                "description": "Integrated logistics services supporting goods distribution, project delivery, and supply chain operations efficiently, securely, and on schedule."
+                "features": [
+                    "Integrated Energy Logistics for Land & Marine Distribution",
+                    "Gas Metering Processing Facility (On Process)"
+                ],
+                "tags": [
+                    "Marine Logistics",
+                    "Gas Metering"
+                ]
             }
         }
     },
     "solutions": {
         "title": "Solutions We Offer",
-        "items": [
-            "Energy Exploration & Production",
-            "Infrastructure Management",
-            "Operational Digitalization",
-            "Renewable Energy",
-            "Energy Supply Chain",
-            "Strategic Consulting"
-        ]
+        "items": {
+            "trading": {
+                "title": "Trading",
+                "description": "Distribution of fuel and energy commodities to industrial customers and business partners."
+            },
+            "investment": {
+                "title": "Investment",
+                "description": "Investment in energy infrastructure, oil & gas, and renewable energy projects."
+            },
+            "operation": {
+                "title": "Operations & Maintenance",
+                "description": "Safe and efficient management of energy facilities and operational assets."
+            }
+        }
     },
     "advantages": {
         "title": "Why Choose Oxala",

@@ -18,9 +18,9 @@ export default function InformationDisclosure({ documents }) {
             <InformationHero />
             <InformationOverview />
             <InformationServices />
-            <section id="struktur-organisasi">
+            {/* <section id="struktur-organisasi">
                 <OrganizationStructure />
-            </section>
+            </section> */}
 
             <section id="dokumen-informasi">
                 <InformationDocuments documents={documents} />

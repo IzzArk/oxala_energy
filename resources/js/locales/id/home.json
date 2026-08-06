@@ -1,56 +1,46 @@
 {
     "hero": {
-        "badge": "Perusahaan Energi Global",
-        "title1": "Menggerakkan",
-        "title2": "Masa Depan",
-        "titleHighlight": "Energi Berkelanjutan",
-        "description": "Oxala menghadirkan solusi energi, infrastruktur, dan teknologi modern untuk mendukung ketahanan energi nasional serta transisi menuju masa depan yang lebih berkelanjutan.",
-        "productButton": "Produk Kami",
-        "contactButton": "Hubungi Kami",
+        "badge": "PT OXALA ENERGY INTERNATIONAL TBK · IDX: PIPA",
+        "title1": "Menggerakkan Masa Depan Menuju",
+        "title2": "Ekosistem Energi Terintegrasi",
+        "titleHighlight": "Indonesia Yang Berkelanjutan",
+        "description": "Melanjutkan lebih dari satu dekade bisnis manufaktur pipa dan material bangunan, Oxala bertransformasi membangun unit trading, investasi, dan operasi pada sektor energi untuk mendukung ketahanan energi nasional serta transisi menuju masa depan yang berkelanjutan.",
+        "productButton": "Explore Our Business Units",
+        "investorButton": "Investor Relations",
         "scroll": "Scroll"
     },
     "carbonCredit": {
         "badge": "Program Keberlanjutan",
         "title": "Carbon Credit & \nRenewable Energy",
-        "description": "Oxala berkomitmen mempercepat transisi energi melalui pengembangan proyek renewable energy, carbon offset, dan implementasi prinsip ESG untuk mendukung keberlanjutan bisnis dan lingkungan.",
-        "button": "Pelajari Selengkapnya",
-        "floating": {
-            "badge": "Keberlanjutan",
-            "title": "Net Zero 2060",
-            "description": "Mendukung transformasi menuju energi yang lebih hijau dan berkelanjutan."
-        },
+        "description": "Komitmen Oxala dalam mendukung transisi energi Indonesia melalui pengembangan proyek rendah karbon dan sumber energi terbarukan.",
         "items": {
             "carbon": {
                 "title": "Carbon Credit",
-                "description": "Mendukung pengurangan emisi karbon melalui proyek karbon yang memenuhi standar internasional."
+                "description": "Mengembangkan proyek pengurangan emisi karbon yang dapat disertifikasi, mendukung target Nationally Determined Contribution (NDC) Indonesia sekaligus membuka peluang perdagangan karbon."
             },
             "renewable": {
                 "title": "Renewable Energy",
-                "description": "Pengembangan energi surya, biomassa, serta solusi energi bersih untuk masa depan."
-            },
-            "esg": {
-                "title": "Komitmen ESG",
-                "description": "Mengintegrasikan prinsip Environmental, Social & Governance dalam setiap kegiatan perusahaan."
+                "description": "Menjajaki pengembangan sumber energi terbarukan sebagai pelengkap portofolio energi konvensional, sejalan dengan agenda transisi energi nasional menuju masa depan yang lebih berkelanjutan."
             }
         }
     },
     "services": {
-        "title": "Layanan Unggulan Kami",
+        "title": "Layanan Kami",
         "exploration": {
-            "title": "Eksplorasi & Produksi",
-            "description": "Memanfaatkan teknologi survei geologi mutakhir untuk ekstraksi sumber daya yang efisien dan bertanggung jawab."
+            "title": "Manufaktur — Pipa & Material Bangunan",
+            "description": "Produksi & distribusi Pipa PVC, Pipa HDPE, Fitting, PVC Roofing, dan Lem PVC di bawah lebih dari 20 brand, dari fasilitas pabrik di Tangerang."
         },
         "renewable": {
-            "title": "Energi Terbarukan",
-            "description": "Transisi energi melalui investasi besar pada tenaga surya, angin, dan infrastruktur hidrogen hijau."
+            "title": "Energi",
+            "description": "Trading BBM, investasi infrastruktur energi, serta pengembangan solusi energi untuk mendukung kebutuhan industri dan pembangunan nasional."
         },
         "distribution": {
-            "title": "Distribusi Global",
-            "description": "Jaringan logistik lintas benua yang memastikan pengiriman energi yang aman dan tepat waktu."
+            "title": "Logistik",
+            "description": "Pengoperasian layanan logistik darat dan laut yang terintegrasi untuk memastikan distribusi produk dan energi berjalan aman, efisien, dan tepat waktu."
         },
         "technology": {
-            "title": "Teknologi Operasi",
-            "description": "Implementasi IoT dan AI untuk pemantauan real-time pusat operasi energi."
+            "title": "Infrastruktur",
+            "description": "Pengembangan dan investasi infrastruktur pendukung sektor energi guna meningkatkan konektivitas, efisiensi operasional, dan pertumbuhan bisnis yang berkelanjutan."
         }
     },
     "advantages": {
@@ -69,6 +59,21 @@
                 "title": "Komitmen Keberlanjutan",
                 "description": "Menyeimbangkan kebutuhan energi hari ini dengan tanggung jawab lingkungan."
             }
+        }
+    },
+    "newsInformation": {
+        "badge": "Update Terbaru",
+        "title": "Berita & Keterbukaan Informasi",
+        "description": "Ikuti perkembangan terbaru perusahaan serta dokumen keterbukaan informasi yang dipublikasikan secara resmi.",
+        "news": {
+            "title": "Berita Terbaru",
+            "empty": "Belum ada berita.",
+            "button": "Lihat Semua"
+        },
+        "documents": {
+            "title": "Keterbukaan Informasi",
+            "empty": "Belum ada dokumen.",
+            "button": "Lihat Semua"
         }
     },
     "cta": {

@@ -1,16 +1,16 @@
 {
     "hero": {
         "badge": "Contact Us",
-        "title": "Contact Us",
-        "description": "We're ready to support your business needs and answer your questions."
+        "title": "We're Here to Support Your Business and Answer Your Questions",
+        "description": "Whether you have a business inquiry, partnership opportunity, or general question, our team is ready to assist you."
     },
     "info": {
         "title": "Contact Information",
-        "description": "Reach out to us using the information below. Our team is ready to assist with your inquiries and business needs.",
+        "description": "Get in touch with us using the contact details below. Our team is ready to assist with your inquiries and business needs.",
         "items": {
             "address": {
                 "title": "Address",
-                "value": "South Jakarta, Jakarta, Indonesia"
+                "value": "Jl. Iskandarsyah I No. 10, RT.5/RW.2, Melawai, Kebayoran Baru, South Jakarta 12160, Indonesia"
             },
             "phone": {
                 "title": "Phone",
@@ -22,7 +22,7 @@
             },
             "hours": {
                 "title": "Business Hours",
-                "value": "Monday - Friday, 08:00 AM - 05:00 PM"
+                "value": "Monday – Friday, 08:00 AM – 05:00 PM (WIB)"
             }
         }
     },

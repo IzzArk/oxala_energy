@@ -23,7 +23,7 @@ export default function InformationDocuments({
             transition={{
                 duration: 0.8,
             }}
-            className="py-24 bg-gray-50"
+            className="py-24 bg-[#ffffff]"
         >
             <div className="max-w-6xl mx-auto px-6">
 

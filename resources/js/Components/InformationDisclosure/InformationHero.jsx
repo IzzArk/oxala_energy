@@ -33,7 +33,7 @@ export default function InformationHero() {
                 </h1>
 
                 <p className="max-w-3xl mx-auto mt-6 text-blue-100">
-                    {t("information:hero.description")}.
+                    {t("information:hero.description")}
                 </p>
 
             </div>

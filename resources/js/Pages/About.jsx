@@ -20,11 +20,12 @@ export default function About() {
             <section id="profil">
                 <CompanyOverview />
             </section>
+            <CompanyTimeline />
             <section id="visi-misi">
                 <VisionMissionSection />
             </section>
             <CoreValues />
-            <CompanyTimeline />
+
             <section id="direksi-komisaris">
                 <LeadershipSection />
             </section>

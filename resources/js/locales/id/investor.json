@@ -1,48 +1,51 @@
 {
     "hero": {
-        "title": "Hubungan Investor",
-        "description": "Transparansi, pertumbuhan berkelanjutan, dan penciptaan nilai jangka panjang bagi seluruh pemangku kepentingan."
+        "badge": "Hubungan Investor",
+        "title": "Transparansi & akuntabilitas bagi seluruh pemangku kepentingan.",
+        "description": "Transparansi, pertumbuhan berkelanjutan, dan penciptaan nilai jangka panjang."
     },
     "companyHighlights": {
         "items": {
-            "experience": {
+            "stockCode": {
+                "title": "PIPA",
+                "subtitle": "Kode Saham IDX"
+            },
+            "listingYear": {
+                "title": "2023",
+                "subtitle": "Tahun Pencatatan di BEI"
+            },
+            "shareComposition": {
+                "title": "49,92% / 50,08%",
+                "subtitle": "Komposisi Saham (MCI / Publik)"
+            },
+            "companyExperience": {
                 "title": "15+",
                 "subtitle": "Tahun Pengalaman"
-            },
-            "projects": {
-                "title": "20+",
-                "subtitle": "Proyek Strategis"
-            },
-            "employees": {
-                "title": "500+",
-                "subtitle": "Tenaga Profesional"
-            },
-            "governance": {
-                "title": "100%",
-                "subtitle": "Komitmen Tata Kelola"
             }
-        }
+        },
+        "informationNote": "Data perusahaan diperbarui secara berkala berdasarkan informasi yang dipublikasikan kepada Bursa Efek Indonesia (BEI) dan sumber resmi Perseroan. Komposisi kepemilikan saham dapat berubah sesuai aksi korporasi yang berlaku."
     },
     "financialHighlights": {
-        "title": "Highlight Kinerja",
+        "title": "Highlight Kinerja Keuangan",
         "items": {
             "revenue": {
-                "label": "Pendapatan",
-                "value": "Rp 1,25 T"
+                "label": "Penjualan Bersih FY2025",
+                "value": "Rp23,86 M"
             },
             "profit": {
-                "label": "Laba Bersih",
-                "value": "Rp 245 M"
+                "label": "Rugi Bersih Tahun Berjalan FY2025",
+                "value": "Rp17,56 M"
             },
             "assets": {
-                "label": "Total Aset",
-                "value": "Rp 5,8 T"
+                "label": "Total Aset per 31 Des 2025",
+                "value": "Rp99,70 M"
             },
             "equity": {
-                "label": "Ekuitas",
-                "value": "Rp 2,9 T"
+                "label": "Total Ekuitas per 31 Des 2025",
+                "value": "Rp64,62 M"
             }
-        }
+        },
+        "informationNote": "Angka dalam satuan miliar Rupiah, diambil langsung dari Laporan Keuangan Konsolidasian Auditan Tahun Buku 2025. Perusahaan mencatat rugi bersih tahun berjalan, sebagian disebabkan oleh koreksi saldo awal (reklasifikasi periode sebelumnya) sesuai PSAK 25 yang telah diungkapkan dalam laporan. Rugi (bukan laba) ditampilkan apa adanya agar sesuai dengan prinsip keterbukaan informasi — jangan diganti dengan angka lain tanpa dasar laporan resmi."
     },
     "annualReports": {
         "title": "Laporan Tahunan",

@@ -6,9 +6,10 @@ import CTASection from "@/Components/Landing/CTASection";
 import Footer from "@/Components/Common/Footer";
 import { Head } from "@inertiajs/react";
 import CarbonCredit from "@/Components/Landing/CarbonCredit";
+import NewsInformationSection from "@/Components/Landing/NewsInformationSection";
 
 
-export default function Home({ banners }) {
+export default function Home({ banners, news, documents }) {
     return (
         <>
             <Head title="Home" />
@@ -18,6 +19,10 @@ export default function Home({ banners }) {
                 <CarbonCredit />
                 <Services />
                 <Advantages />
+                <NewsInformationSection
+                    news={news}
+                    documents={documents}
+                />
                 <CTASection />
                 <Footer />
             </div>

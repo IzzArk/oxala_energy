@@ -32,10 +32,6 @@ export default function ContactHero() {
                     {t("contact:hero.title")}
                 </h1>
 
-                <p className="max-w-3xl mx-auto mt-6 text-blue-100">
-                    {t("contact:hero.description")}
-                </p>
-
             </div>
 
         </motion.section>

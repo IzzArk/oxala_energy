@@ -105,9 +105,9 @@ export default function Hero({ banners }) {
                                     text-white
                                     font-bold
                                     leading-tight
-                                    text-4xl
-                                    sm:text-5xl
-                                    lg:text-7xl
+                                    text-3xl
+                                    sm:text-4xl
+                                    lg:text-5xl
                                 "
                             >
                                 {t("home:hero.title1")}
@@ -184,7 +184,7 @@ export default function Hero({ banners }) {
                                         transition
                                     "
                                 >
-                                    {t("home:hero.contactButton")}
+                                    {t("home:hero.investorButton")}
                                 </a>
                             </div>
                         </motion.div>

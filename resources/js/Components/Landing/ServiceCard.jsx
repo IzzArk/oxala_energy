@@ -228,7 +228,7 @@ export default function ServiceCard({
 
                 {large && (
                     <a
-                        href="#"
+                        href="/produk"
                         className="
                             mt-8
                             inline-flex

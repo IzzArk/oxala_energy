@@ -1,13 +1,38 @@
 {
     "hero": {
         "badge": "Tentang Kami",
-        "title": "Membangun Masa Depan Energi",
-        "description": "Oxalá adalah perusahaan energi terintegrasi yang berkomitmen menghadirkan solusi energi berkelanjutan melalui inovasi, keselamatan, dan keunggulan operasional."
+        "title": "Membangun Transformasi Energi Yang Berkelanjutan",
+        "description": "Dari produsen material bangunan menjadi bagian dari ekosistem energi Indonesia — tanpa meninggalkan akar bisnis yang sudah teruji lebih dari satu dekade, Oxalá berkomitmen membangun solusi energi berkelanjutan melalui inovasi, keselamatan, dan keunggulan operasional."
     },
     "companyOverview": {
         "title": "Siapa Kami",
-        "paragraph1": "Selama lebih dari 25 tahun, Oxalá telah berkontribusi dalam pengembangan industri energi melalui operasi yang aman, efisien, dan berkelanjutan.",
-        "paragraph2": "Kami mengintegrasikan sektor hulu, hilir, distribusi energi, dan energi terbarukan untuk menciptakan nilai jangka panjang bagi pelanggan dan masyarakat."
+        "paragraph1": "PT Oxala Energy International Tbk - sebelumnya PT Multi Makmur Lemindo Tbk - memulai perjalanan sebagai produsen material bangunan berbahan PVC, tercatat di Bursa Efek Indonesia sejak 2023 (IPO 10 April 2023). Pada 2025, pengendalian perusahaan beralih ke PT Morris Capital Indonesia, membuka babak baru transformasi menuju ekosistem energi terintegrasi, resmi berganti nama pada 2026",
+        "paragraph2": "Bisnis manufaktur pipa dan material bangunan tetap berjalan bersinergi menuju bisnis energi yang dibangun secara bertahap dan berkelanjutan."
+    },
+    "timeline": {
+        "title": "Perjalanan Kami",
+        "history": {
+            "2005": {
+                "year": "2005",
+                "text": "Berdiri sebagai CV Multi Makmur Lemindo"
+            },
+            "2012": {
+                "year": "2012",
+                "text": "Resmi menjadi PT Multi Makmur Lemindo"
+            },
+            "2023": {
+                "year": "2023",
+                "text": "IPO di Bursa Efek Indonesia (10 April)"
+            },
+            "2025": {
+                "year": "2025",
+                "text": "Pengambilalihan oleh PT Morris Capital Indonesia"
+            },
+            "2026": {
+                "year": "2026",
+                "text": "Rebranding menjadi Oxala Energy International"
+            }
+        }
     },
     "visionMission": {
         "visionTitle": "VISI",
@@ -25,30 +50,21 @@
     "coreValues": {
         "title": "Nilai Perusahaan",
         "values": {
-            "safety": "Keselamatan Utama",
-            "integrity": "Integritas",
-            "innovation": "Inovasi",
-            "sustainability": "Keberlanjutan"
-        }
-    },
-    "timeline": {
-        "title": "Perjalanan Kami",
-        "history": {
-            "2001": {
-                "year": "2001",
-                "text": "Perusahaan didirikan."
+            "safety": {
+                "title": "Keselamatan Utama",
+                "description": "Mengutamakan keselamatan kerja di seluruh lini operasional."
             },
-            "2008": {
-                "year": "2008",
-                "text": "Ekspansi nasional."
+            "integrity": {
+                "title": "Integritas",
+                "description": "Menjunjung kejujuran & etika dalam setiap keputusan bisnis."
             },
-            "2015": {
-                "year": "2015",
-                "text": "Masuk energi terbarukan."
+            "innovation": {
+                "title": "Inovasi",
+                "description": "Terus mengembangkan solusi terbaik bagi industri & pelanggan."
             },
-            "2024": {
-                "year": "2024",
-                "text": "Transformasi digital global."
+            "sustainability": {
+                "title": "Keberlanjutan",
+                "description": "Berkomitmen pada praktik bisnis yang bertanggung jawab terhadap lingkungan."
             }
         }
     },

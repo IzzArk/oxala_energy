@@ -42,11 +42,11 @@ export default function CompanyOverview() {
                             {t("about:companyOverview.title")}
                         </h2>
 
-                        <p className="text-gray-600 leading-relaxed mb-4">
+                        <p className="text-gray-600 leading-relaxed mb-4 text-lg">
                             {t("about:companyOverview.paragraph1")}
                         </p>
 
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-gray-600 leading-relaxed text-lg">
                             {t("about:companyOverview.paragraph2")}
                         </p>
 

@@ -11,6 +11,7 @@ export default defineConfig({
                 "resources/js/app.jsx",
             ],
             refresh: true,
+            buildDirectory: "build",
         }),
         react(),
         tailwindcss(),

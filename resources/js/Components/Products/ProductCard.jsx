@@ -1,131 +1,104 @@
-import { ArrowRight, Package } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function ProductCard({
     title,
-    description,
+    subtitle,
     image,
+    color,
+    features = [],
+    tags = [],
 }) {
+
+    const { t } = useTranslation("product");
+
     return (
         <div
             className="
-                group
-                bg-white
-                rounded-2xl
+                relative
+                rounded-3xl
                 overflow-hidden
-                border
-                border-gray-100
-                shadow-sm
-                hover:shadow-xl
-                hover:border-[#B6C95C]
-                hover:-translate-y-2
-                transition-all
-                duration-300
-                flex
-                flex-col
-                h-full
+                min-h-[520px]
+                shadow-xl
+                group
             "
         >
+            <img
+                src={image}
+                alt={title}
+                className="
+                    absolute
+                    inset-0
+                    w-full
+                    h-full
+                    object-cover
+                    transition
+                    duration-700
+                    group-hover:scale-105
+                "
+            />
 
-            {/* Accent */}
+            <div
+                className={`absolute inset-0 bg-gradient-to-br ${color}`}
+            />
 
-            <div className="h-1 bg-[#B6C95C]" />
+            <div className="relative z-10 p-10 flex flex-col h-full text-white">
 
-            {/* Image */}
+                <div>
 
-            <div className="overflow-hidden">
+                    <h2 className="text-4xl font-bold">
+                        {title}
+                    </h2>
 
-                <img
-                    src={image}
-                    alt={title}
-                    className="
-                        h-60
-                        w-full
-                        object-cover
-                        transition-transform
-                        duration-500
-                        group-hover:scale-105
-                    "
-                />
-
-            </div>
-
-            <div className="p-8 flex flex-col flex-1">
-
-                <span
-                    className="
-                        inline-block
-                        w-fit
-                        px-3
-                        py-1
-                        rounded-full
-                        bg-[#EEF4D7]
-                        text-[#7A9433]
-                        text-xs
-                        font-semibold
-                        uppercase
-                        tracking-wider
-                        mb-5
-                    "
-                >
-                    Product
-                </span>
-
-                <div
-                    className="
-                        w-14
-                        h-14
-                        rounded-xl
-                        bg-[#EEF4D7]
-                        flex
-                        items-center
-                        justify-center
-                        mb-6
-                    "
-                >
-
-                    <Package
-                        size={26}
-                        className="text-[#7A9433]"
-                    />
+                    <p className="mt-4 text-white/80">
+                        {subtitle}
+                    </p>
 
                 </div>
 
-                <h3
-                    className="
-                        text-2xl
-                        font-bold
-                        text-[#23478F]
-                        group-hover:text-[#7A9433]
-                        transition-colors
-                        mb-4
-                    "
-                >
-                    {title}
-                </h3>
+                <div className="mt-8 space-y-3">
 
-                <p className="text-gray-600 leading-7 flex-1">
-                    {description}
-                </p>
+                    {features.map((feature, index) => (
 
-                <button
-                    className="
-                        mt-8
-                        inline-flex
-                        items-center
-                        gap-2
-                        text-[#23478F]
-                        hover:text-[#7A9433]
-                        font-semibold
-                        transition-colors
-                    "
-                >
-                    Pelajari Selengkapnya
+                        <div
+                            key={index}
+                            className="flex gap-3 items-start"
+                        >
+                            <div className="w-2 h-2 rounded-full bg-[#B6C95C] mt-3 flex-shrink-0" />
 
-                    <ArrowRight
-                        size={18}
-                    />
+                            <span className="leading-7">
+                                {feature}
+                            </span>
 
-                </button>
+                        </div>
+
+                    ))}
+
+                </div>
+
+                <div className="flex flex-wrap gap-3 mt-8">
+
+                    {tags.map((tag) => (
+
+                        <span
+                            key={tag}
+                            className="
+                                px-4
+                                py-2
+                                rounded-full
+                                bg-white/10
+                                border
+                                border-white/20
+                                backdrop-blur
+                                text-sm
+                            "
+                        >
+                            {tag}
+                        </span>
+
+                    ))}
+
+                </div>
 
             </div>
 

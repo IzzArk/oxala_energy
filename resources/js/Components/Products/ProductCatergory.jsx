@@ -4,66 +4,84 @@ import { useTranslation } from "react-i18next";
 
 export default function ProductCategories() {
     const { t } = useTranslation("product");
+
     const products = [
         {
-            title: t("product:categories.items.renewable.title"),
-            description:
-                t("product:categories.items.renewable.description"),
-            image:
-                "https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=80",
-        },
-        {
             title: t("product:categories.items.pipeline.title"),
-            description:
-                t("product:categories.items.pipeline.description"),
+            subtitle: t("product:categories.items.pipeline.subtitle"),
+
             image:
-                "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80",
+
+            color: "from-[#A63E30]/90 to-[#8C3025]/90",
+
+            features: t(
+                "product:categories.items.pipeline.features",
+                { returnObjects: true }
+            ),
+
+            tags: t(
+                "product:categories.items.pipeline.tags",
+                { returnObjects: true }
+            ),
         },
+
         {
-            title: t("product:categories.items.logistic.title"),
-            description:
-                t("product:categories.items.logistic.description"),
+            title: t("product:categories.items.renewable.title"),
+            subtitle: t("product:categories.items.renewable.subtitle"),
+
             image:
-                "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1600&q=80",
+
+            color: "from-[#23478F]/90 to-[#18386B]/90",
+
+            features: [
+                ...t(
+                    "product:categories.items.renewable.features",
+                    { returnObjects: true }
+                ),
+                ...t(
+                    "product:categories.items.logistic.features",
+                    { returnObjects: true }
+                ),
+            ],
+
+            tags: [
+                ...t(
+                    "product:categories.items.renewable.tags",
+                    { returnObjects: true }
+                ),
+                ...t(
+                    "product:categories.items.logistic.tags",
+                    { returnObjects: true }
+                ),
+            ],
         },
     ];
 
     return (
-        <motion.section
-            initial={{
-                opacity: 0,
-                y: 60,
-            }}
-            whileInView={{
-                opacity: 1,
-                y: 0,
-            }}
-            viewport={{
-                once: true,
-                amount: 0.2,
-            }}
-            transition={{
-                duration: 0.8,
-            }}
-            className="py-24 bg-[#ffffff]"
-        >
+        <section className="py-24 bg-white">
+
             <div className="max-w-7xl mx-auto px-6">
 
-                <div className="text-center mb-16">
-
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-16"
+                >
                     <h2 className="text-4xl font-bold text-[#23478F]">
                         {t("product:categories.title")}
                     </h2>
 
-                    <div className="w-20 h-1 bg-[#B6C95C] rounded-full mx-auto mt-5"></div>
+                    <div className="w-24 h-1 bg-[#B6C95C] rounded-full mx-auto mt-5" />
 
-                    <p className="text-gray-600 mt-6 max-w-2xl mx-auto">
+                    <p className="text-gray-600 mt-6 max-w-3xl mx-auto">
                         {t("product:categories.description")}
                     </p>
+                </motion.div>
 
-                </div>
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid lg:grid-cols-2 gap-8">
 
                     {products.map((item, index) => (
                         <ProductCard
@@ -75,6 +93,7 @@ export default function ProductCategories() {
                 </div>
 
             </div>
-        </motion.section>
+
+        </section>
     );
 }

@@ -1,7 +1,7 @@
 {
     "hero": {
         "badge": "Hubungi Kami",
-        "title": "Hubungi Kami",
+        "title": "Kami siap membantu kebutuhan bisnis dan menjawab pertanyaan Anda.",
         "description": "Kami siap membantu kebutuhan bisnis dan menjawab pertanyaan Anda."
     },
     "info": {
@@ -10,7 +10,7 @@
         "items": {
             "address": {
                 "title": "Alamat",
-                "value": "Jakarta Selatan, DKI Jakarta, Indonesia"
+                "value": "Jl. Iskandarsyah I No. 10, RT.5/RW.2, Kel. Melawai, Kec. Kebayoran Baru, Jakarta Selatan 12160"
             },
             "phone": {
                 "title": "Telepon",

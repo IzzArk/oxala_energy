@@ -21,10 +21,10 @@ export default function Create() {
     return (
         <AdminLayout>
 
-            <Head title="Tambah Governance Document" />
+            <Head title="Tambah Dokumen" />
 
             <h1 className="text-2xl font-bold mb-6">
-                Tambah Governance Document
+                Tambah Dokumen Keterbukaan Informasi
             </h1>
 
             <form

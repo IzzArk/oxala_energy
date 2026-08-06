@@ -47,7 +47,7 @@ export default function AppSidebar({ mobile = false }) {
                     href: "/admin/annual-reports",
                 },
                 {
-                    title: "Dokument Tata Kelola",
+                    title: "Dokument Informasi",
                     icon: FileText,
                     href: "/admin/governance-documents",
                 },

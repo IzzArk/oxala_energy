@@ -248,18 +248,7 @@ export default function Navbar() {
                 z-50
             "
                                 >
-                                    <a
-                                        href="/keterbukaan-informasi#struktur-organisasi"
-                                        className="
-                    block
-                    px-5
-                    py-3
-                    hover:bg-gray-50
-                    transition
-                "
-                                    >
-                                        {t("common:navbar.organization")}
-                                    </a>
+
 
                                     <a
                                         href="/keterbukaan-informasi#dokumen-informasi"

@@ -1,54 +1,70 @@
 {
     "hero": {
         "badge": "About Us",
-        "title": "Building the Future of Energy",
-        "description": "Oxalá is an integrated energy company committed to delivering sustainable energy solutions through innovation, safety, and operational excellence."
+        "title": "Driving the Transformation Toward a Sustainable Energy Future",
+        "description": "From a trusted building materials manufacturer to becoming part of Indonesia’s integrated energy ecosystem, Oxala remains committed to developing sustainable energy solutions through innovation, safety, and operational excellence while preserving the strong business foundation built over more than a decade."
     },
     "companyOverview": {
         "title": "Who We Are",
-        "paragraph1": "For more than 25 years, Oxalá has contributed to the development of the energy industry through safe, efficient, and sustainable operations.",
-        "paragraph2": "We integrate upstream, downstream, energy distribution, and renewable energy businesses to create long-term value for customers and society."
+        "paragraph1": "PT Oxala Energy International Tbk, formerly known as PT Multi Makmur Lemindo Tbk, began its journey as a manufacturer of PVC-based building materials and was listed on the Indonesia Stock Exchange through its Initial Public Offering (IPO) on April 10, 2023. In 2025, the company entered a new chapter following its acquisition by PT Morris Capital Indonesia, marking the beginning of its transformation into an integrated energy ecosystem. The company officially adopted the name PT Oxala Energy International Tbk in 2026.",
+        "paragraph2": "Our building materials manufacturing business continues to operate while growing in synergy with the company's gradual and sustainable expansion into the energy sector."
+    },
+    "timeline": {
+        "title": "Our Journey",
+        "history": {
+            "2005": {
+                "year": "2005",
+                "text": "Established as CV Multi Makmur Lemindo"
+            },
+            "2012": {
+                "year": "2012",
+                "text": "Officially incorporated as PT Multi Makmur Lemindo"
+            },
+            "2023": {
+                "year": "2023",
+                "text": "Listed on the Indonesia Stock Exchange (April 10)"
+            },
+            "2025": {
+                "year": "2025",
+                "text": "Acquired by PT Morris Capital Indonesia"
+            },
+            "2026": {
+                "year": "2026",
+                "text": "Rebranded as Oxala Energy International"
+            }
+        }
     },
     "visionMission": {
         "visionTitle": "VISION",
         "vision": "To Become a Leading Company in Building a Sustainable Ecosystem",
         "missionTitle": "MISSION",
         "missions": {
-            "1": "Enhance human resource competencies based on the company's core values (AKHLAK).",
-            "2": "Deliver high-quality products and services using advanced technology and integrated systems.",
+            "1": "Enhance human resource competencies based on the Company's AKHLAK core values.",
+            "2": "Deliver high-quality products and services through advanced technology and integrated systems.",
             "3": "Strengthen financial management, risk management, and corporate governance.",
-            "4": "Optimize a well-measured business portfolio while supporting national development toward an advanced Indonesia.",
-            "5": "Expand international business networks by becoming a trusted player in the global construction market.",
-            "6": "Promote social responsibility and environmental sustainability in all business activities."
+            "4": "Optimize strategic and measurable business portfolios while contributing to Indonesia’s national development.",
+            "5": "Expand our international business network by becoming a trusted player in the global construction market.",
+            "6": "Promote social responsibility and environmental sustainability across all business activities."
         }
     },
     "coreValues": {
-        "title": "Core Values",
+        "title": "Our Core Values",
         "values": {
-            "safety": "Safety First",
-            "integrity": "Integrity",
-            "innovation": "Innovation",
-            "sustainability": "Sustainability"
-        }
-    },
-    "timeline": {
-        "title": "Our Journey",
-        "history": {
-            "2001": {
-                "year": "2001",
-                "text": "The company was established."
+            "safety": {
+                "title": "Safety First",
+                "description": "Prioritizing workplace safety across every aspect of our operations."
             },
-            "2008": {
-                "year": "2008",
-                "text": "Expanded operations nationwide."
+            "integrity": {
+                "title": "Integrity",
+                "description": "Upholding honesty, transparency, and ethical conduct in every business decision."
             },
-            "2015": {
-                "year": "2015",
-                "text": "Entered the renewable energy sector."
+            "innovation": {
+                "title": "Innovation",
+                "description": "Continuously developing innovative solutions that create value for our customers and industries."
             },
-            "2024": {
-                "year": "2024",
-                "text": "Began global digital transformation."
+            "sustainability": {
+                "title": "Sustainability",
+                "description": "Committed to responsible business practices that protect the environment and support future generations."
             }
         }
     },
@@ -71,8 +87,8 @@
         }
     },
     "cta": {
-        "title": "Together Towards Sustainable Energy",
-        "description": "Let's collaborate to build a more efficient and sustainable energy future.",
+        "title": "Building a Sustainable Energy Future Together",
+        "description": "Let's collaborate to create a more efficient, resilient, and sustainable energy future.",
         "button": "Contact Us"
     }
 }

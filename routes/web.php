@@ -9,22 +9,15 @@ use App\Http\Controllers\Admin\NewsControllerAdmin;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Frontend\NewsController;
 use App\Http\Controllers\Frontend\InvestorRelationsController;
+use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\ProfileController;
-use App\Models\Banner;
+
 use App\Models\GovernanceDocument;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
 
-    $banners = Banner::where('is_active', true)
-        ->orderBy('sort_order')
-        ->get();
-
-    return Inertia::render('Home', [
-        'banners' => $banners
-    ]);
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/tentang-kami', function () {
 
