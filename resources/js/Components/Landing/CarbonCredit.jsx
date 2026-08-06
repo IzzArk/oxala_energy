@@ -57,7 +57,7 @@ export default function CarbonCredit() {
                 text-[#7A9433]
                 text-sm
                 font-semibold
-            ">
+                             ">
                         {t("home:carbonCredit.badge")}
                     </span>
 
@@ -66,7 +66,7 @@ export default function CarbonCredit() {
                 text-5xl
                 font-bold
                 text-[#23478F]
-            ">
+                             ">
                         {t("home:carbonCredit.title")}
                     </h2>
 
