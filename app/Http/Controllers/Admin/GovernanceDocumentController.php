@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\GovernanceDocument;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Inertia\Inertia;
 
 class GovernanceDocumentController extends Controller
@@ -45,9 +46,20 @@ class GovernanceDocumentController extends Controller
             'is_active'   => 'boolean',
         ]);
 
-        $path = $request
-            ->file('file')
-            ->store('governance-documents', 'public');
+        $file = $request->file('file');
+
+        // Nama file berdasarkan title + timestamp
+        $filename = Str::slug($request->title)
+            . '-'
+            . time()
+            . '.'
+            . $file->getClientOriginalExtension();
+
+        $path = $file->storeAs(
+            'governance-documents',
+            $filename,
+            'public'
+        );
 
         GovernanceDocument::create([
             'title'       => $request->title,
@@ -58,7 +70,7 @@ class GovernanceDocumentController extends Controller
         ]);
 
         return redirect()
-            ->route('admin.governance-documents.index')
+            ->route('governance-documents.index')
             ->with('success', 'Dokumen berhasil ditambahkan.');
     }
 
@@ -75,8 +87,10 @@ class GovernanceDocumentController extends Controller
     /**
      * Update the specified resource.
      */
-    public function update(Request $request, GovernanceDocument $governanceDocument)
-    {
+    public function update(
+        Request $request,
+        GovernanceDocument $governanceDocument
+    ) {
         $request->validate([
             'title'       => 'required|string|max:255',
             'description' => 'nullable|string',
@@ -94,22 +108,36 @@ class GovernanceDocumentController extends Controller
 
         if ($request->hasFile('file')) {
 
+            // Hapus file lama
             if (
                 $governanceDocument->file &&
                 Storage::disk('public')->exists($governanceDocument->file)
             ) {
-                Storage::disk('public')->delete($governanceDocument->file);
+                Storage::disk('public')->delete(
+                    $governanceDocument->file
+                );
             }
 
-            $data['file'] = $request
-                ->file('file')
-                ->store('governance-documents', 'public');
+            $file = $request->file('file');
+
+            // Nama file berdasarkan title + timestamp
+            $filename = Str::slug($request->title)
+                . '-'
+                . time()
+                . '.'
+                . $file->getClientOriginalExtension();
+
+            $data['file'] = $file->storeAs(
+                'governance-documents',
+                $filename,
+                'public'
+            );
         }
 
         $governanceDocument->update($data);
 
         return redirect()
-            ->route('admin.governance-documents.index')
+            ->route('governance-documents.index')
             ->with('success', 'Dokumen berhasil diperbarui.');
     }
 
@@ -122,13 +150,15 @@ class GovernanceDocumentController extends Controller
             $governanceDocument->file &&
             Storage::disk('public')->exists($governanceDocument->file)
         ) {
-            Storage::disk('public')->delete($governanceDocument->file);
+            Storage::disk('public')->delete(
+                $governanceDocument->file
+            );
         }
 
         $governanceDocument->delete();
 
         return redirect()
-            ->route('admin.governance-documents.index')
+            ->route('governance-documents.index')
             ->with('success', 'Dokumen berhasil dihapus.');
     }
 }

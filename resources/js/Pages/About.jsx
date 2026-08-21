@@ -10,7 +10,7 @@ import VisionMissionSection from "@/Components/About/VisionMision";
 import { Head } from "@inertiajs/react";
 
 
-export default function About() {
+export default function About({ leaders }) {
     return (
         <>
             <Head title="Tentang Kami" />
@@ -27,7 +27,7 @@ export default function About() {
             <CoreValues />
 
             <section id="direksi-komisaris">
-                <LeadershipSection />
+                <LeadershipSection leaders={leaders} />
             </section>
             <section id="kontak">
                 <AboutCTA />

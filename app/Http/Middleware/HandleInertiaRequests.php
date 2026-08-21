@@ -35,10 +35,19 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
-            'unreadCount' => Contact::where(
-                'is_read',
-                false
-            )->count(),
+            'generalUnreadCount' => fn() => Contact::where(
+                'category',
+                'general'
+            )
+                ->where('is_read', false)
+                ->count(),
+
+            'renewableUnreadCount' => fn() => Contact::where(
+                'category',
+                'renewable-energy'
+            )
+                ->where('is_read', false)
+                ->count(),
         ];
     }
 }

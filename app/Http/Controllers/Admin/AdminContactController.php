@@ -20,6 +20,30 @@ class AdminContactController extends Controller
             ]
         );
     }
+    public function general()
+    {
+        $contacts = Contact::where('category', 'general')
+            ->latest()
+            ->get();
+
+        return Inertia::render('Admin/Contacts/Index', [
+
+            'contacts' => $contacts,
+            'category' => 'general',
+        ]);
+    }
+
+    public function renewable()
+    {
+        $contacts = Contact::where('category', 'renewable-energy')
+            ->latest()
+            ->get();
+
+        return Inertia::render('Admin/Contacts/Index', [
+            'contacts' => $contacts,
+            'category' => 'renewable-energy',
+        ]);
+    }
 
     public function show(Contact $contact)
     {

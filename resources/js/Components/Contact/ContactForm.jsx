@@ -1,8 +1,10 @@
 import { useForm } from "@inertiajs/react";
 import { motion } from "framer-motion";
 import Swal from "sweetalert2";
-import { Send } from "lucide-react";
 import { useTranslation } from "react-i18next";
+
+import GeneralForm from "./Form/GeneralForm";
+import RenewableForm from "./Form/RenewableForm";
 
 export default function ContactForm() {
     const { t } = useTranslation("contact");
@@ -17,6 +19,7 @@ export default function ContactForm() {
     } = useForm({
         name: "",
         email: "",
+        category: "general",
         subject: "",
         message: "",
     });
@@ -28,7 +31,6 @@ export default function ContactForm() {
             preserveScroll: true,
 
             onSuccess: () => {
-
                 reset();
 
                 Swal.fire({
@@ -38,47 +40,34 @@ export default function ContactForm() {
                     confirmButtonColor: "#23478F",
                     confirmButtonText: "OK",
                 });
-
             },
 
             onError: () => {
-
                 Swal.fire({
                     icon: "error",
                     title: t("contact:form.alert.error.title"),
                     text: t("contact:form.alert.error.text"),
                     confirmButtonColor: "#dc2626",
                 });
-
             },
         });
     };
 
     return (
         <motion.section
-            initial={{
-                opacity: 0,
-                y: 60,
-            }}
-            whileInView={{
-                opacity: 1,
-                y: 0,
-            }}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{
                 once: true,
                 amount: 0.2,
             }}
-            transition={{
-                duration: 0.8,
-            }}
+            transition={{ duration: 0.8 }}
             className="py-24 bg-[#F8FAFC]"
         >
-
             <div className="max-w-4xl mx-auto px-6">
 
                 {/* Heading */}
-
-                <div className="text-center mb-16">
+                <div className="text-center mb-10">
 
                     <span
                         className="
@@ -102,7 +91,7 @@ export default function ContactForm() {
                         {t("contact:form.title")}
                     </h2>
 
-                    <div className="w-20 h-1 bg-[#B6C95C] rounded-full mx-auto mt-5"></div>
+                    <div className="w-20 h-1 bg-[#B6C95C] rounded-full mx-auto mt-5" />
 
                     <p className="text-gray-600 mt-6 max-w-xl mx-auto">
                         {t("contact:form.description")}
@@ -110,196 +99,83 @@ export default function ContactForm() {
 
                 </div>
 
-                {/* Form */}
+                {/* Category Button */}
+                <div className="flex justify-center mb-10">
 
-                <form
-                    onSubmit={submit}
-                    className="
-                        bg-white
-                        rounded-2xl
-                        border
-                        border-gray-100
-                        shadow-sm
-                        overflow-hidden
-                    "
-                >
-
-                    <div className="h-1 bg-[#B6C95C]" />
-
-                    <div className="p-8">
-
-                        <div className="grid md:grid-cols-2 gap-6">
-
-                            <div>
-
-                                <input
-                                    type="text"
-                                    placeholder={t("contact:form.placeholder.name")}
-                                    value={data.name}
-                                    onChange={(e) =>
-                                        setData("name", e.target.value)
-                                    }
-                                    className="
-                                        w-full
-                                        rounded-xl
-                                        border
-                                        border-gray-300
-                                        px-4
-                                        py-3
-                                        transition
-                                        focus:outline-none
-                                        focus:ring-2
-                                        focus:ring-[#B6C95C]
-                                        focus:border-[#B6C95C]
-                                    "
-                                />
-
-                                {errors.name && (
-                                    <p className="text-red-500 text-sm mt-2">
-                                        {errors.name}
-                                    </p>
-                                )}
-
-                            </div>
-
-                            <div>
-
-                                <input
-                                    type="email"
-                                    placeholder={t("contact:form.placeholder.email")}
-                                    value={data.email}
-                                    onChange={(e) =>
-                                        setData("email", e.target.value)
-                                    }
-                                    className="
-                                        w-full
-                                        rounded-xl
-                                        border
-                                        border-gray-300
-                                        px-4
-                                        py-3
-                                        transition
-                                        focus:outline-none
-                                        focus:ring-2
-                                        focus:ring-[#B6C95C]
-                                        focus:border-[#B6C95C]
-                                    "
-                                />
-
-                                {errors.email && (
-                                    <p className="text-red-500 text-sm mt-2">
-                                        {errors.email}
-                                    </p>
-                                )}
-
-                            </div>
-
-                        </div>
-
-                        <div className="mt-6">
-
-                            <input
-                                type="text"
-                                placeholder={t("contact:form.placeholder.subject")}
-                                value={data.subject}
-                                onChange={(e) =>
-                                    setData("subject", e.target.value)
-                                }
-                                className="
-                                    w-full
-                                    rounded-xl
-                                    border
-                                    border-gray-300
-                                    px-4
-                                    py-3
-                                    transition
-                                    focus:outline-none
-                                    focus:ring-2
-                                    focus:ring-[#B6C95C]
-                                    focus:border-[#B6C95C]
-                                "
-                            />
-
-                            {errors.subject && (
-                                <p className="text-red-500 text-sm mt-2">
-                                    {errors.subject}
-                                </p>
-                            )}
-
-                        </div>
-
-
-                        <div className="mt-6">
-
-                            <textarea
-                                rows="6"
-                                placeholder={t("contact:form.placeholder.message")}
-                                value={data.message}
-                                onChange={(e) =>
-                                    setData("message", e.target.value)
-                                }
-                                className="
-                                    w-full
-                                    rounded-xl
-                                    border
-                                    border-gray-300
-                                    px-4
-                                    py-3
-                                    resize-none
-                                    transition
-                                    focus:outline-none
-                                    focus:ring-2
-                                    focus:ring-[#B6C95C]
-                                    focus:border-[#B6C95C]
-                                "
-                            />
-
-                            {errors.message && (
-                                <p className="text-red-500 text-sm mt-2">
-                                    {errors.message}
-                                </p>
-                            )}
-
-                        </div>
+                    <div
+                        className="
+                            inline-flex
+                            p-1.5
+                            bg-white
+                            border
+                            border-gray-200
+                            rounded-xl
+                            shadow-sm
+                            gap-2
+                        "
+                    >
 
                         <button
-                            type="submit"
-                            disabled={processing}
-                            className="
-                                mt-8
-                                inline-flex
-                                items-center
-                                gap-3
-                                bg-[#23478F]
-                                hover:bg-[#1B376D]
-                                text-white
-                                px-8
-                                py-3.5
-                                rounded-xl
+                            type="button"
+                            onClick={() => {
+                                reset();
+                                setData("category", "general");
+                            }}
+                            className={`
+                                px-6
+                                py-3
+                                rounded-lg
+                                text-sm
                                 font-semibold
                                 transition-all
                                 duration-300
-                                hover:shadow-lg
-                                hover:shadow-[#B6C95C]/30
-                                disabled:opacity-50
-                                disabled:cursor-not-allowed
-                            "
+                                ${data.category === "general"
+                                    ? "bg-[#23478F] text-white shadow-md"
+                                    : "text-gray-500 hover:text-[#23478F]"
+                                }
+                            `}
                         >
+                            General
+                        </button>
 
-                            <Send size={18} />
-
-                            {processing
-                                ? t("contact:form.button.sending")
-                                : t("contact:form.button.send")}
-
+                        <button
+                            type="button"
+                            onClick={() => {
+                                reset();
+                                setData(
+                                    "category",
+                                    "renewable-energy"
+                                );
+                            }}
+                            className={`
+                                px-6
+                                py-3
+                                rounded-lg
+                                text-sm
+                                font-semibold
+                                transition-all
+                                duration-300
+                                ${data.category === "renewable-energy"
+                                    ? "bg-[#23478F] text-white shadow-md"
+                                    : "text-gray-500 hover:text-[#23478F]"
+                                }
+                            `}
+                        >
+                            Renewable Energy
                         </button>
 
                     </div>
 
-                </form>
+                </div>
+
+                {/* Dynamic Form */}
+                {data.category === "general" ? (
+                    <GeneralForm />
+                ) : (
+                    <RenewableForm />
+                )}
 
             </div>
-
         </motion.section>
     );
 }

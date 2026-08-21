@@ -23,6 +23,7 @@ export default function Edit({ banner }) {
         description: banner.description || "",
         button_text: banner.button_text || "",
         button_link: banner.button_link || "",
+        is_active: banner.is_active,
         image: null,
     });
 
@@ -90,6 +91,26 @@ export default function Edit({ banner }) {
                             setData("image", e.target.files[0])
                         }
                     />
+                    <div>
+
+                        <label className="flex gap-3 items-center">
+
+                            <input
+                                type="checkbox"
+                                checked={data.is_active}
+                                onChange={(e) =>
+                                    setData(
+                                        "is_active",
+                                        e.target.checked
+                                    )
+                                }
+                            />
+
+                            Aktif
+
+                        </label>
+
+                    </div>
 
                     <div className=" mt-6">
 

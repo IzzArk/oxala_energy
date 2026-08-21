@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AnnualReport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Inertia\Inertia;
 
 class AnnualReportController extends Controller
@@ -42,7 +43,19 @@ class AnnualReportController extends Controller
             'is_active' => 'boolean',
         ]);
 
-        $path = $request->file('file')->store('annual-reports', 'public');
+        $file = $request->file('file');
+
+        $filename = Str::slug($request->title)
+            . '-'
+            . $request->year
+            . '.'
+            . $file->getClientOriginalExtension();
+
+        $path = $file->storeAs(
+            'annual-reports',
+            $filename,
+            'public'
+        );
 
         AnnualReport::create([
             'title' => $request->title,
@@ -93,9 +106,20 @@ class AnnualReportController extends Controller
                 Storage::disk('public')->delete($annualReport->file);
             }
 
-            $data['file'] = $request
-                ->file('file')
-                ->store('annual-reports', 'public');
+            $file = $request->file('file');
+
+
+            $filename = Str::slug($request->title)
+                . '-'
+                . $request->year
+                . '.'
+                . $file->getClientOriginalExtension();
+
+            $data['file'] = $file->storeAs(
+                'annual-reports',
+                $filename,
+                'public'
+            );
         }
 
         $annualReport->update($data);

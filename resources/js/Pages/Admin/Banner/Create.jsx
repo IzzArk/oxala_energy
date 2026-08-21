@@ -1,5 +1,7 @@
 import { useForm } from "@inertiajs/react";
 import AdminLayout from "@/Layouts/AdminLayout";
+import { ArrowLeft } from "lucide-react";
+
 
 export default function Create() {
 
@@ -22,10 +24,28 @@ export default function Create() {
         <AdminLayout>
 
             <div className="max-w-3xl">
+                <div className="mb-8">
 
-                <h1 className="text-2xl font-bold mb-6">
-                    Tambah Banner
-                </h1>
+                    <a
+                        href="/admin/banner"
+                        className="inline-flex items-center gap-2 text-gray-500 hover:text-[#23478F]"
+                    >
+                        <ArrowLeft size={18} />
+
+                        Kembali
+                    </a>
+
+                    <h1 className="text-2xl font-bold text-[#23478F] mt-4">
+                        Tambah Banner
+                    </h1>
+
+                    <p className="text-gray-500 mt-1">
+                        Tambahkan Foto Banner.
+                    </p>
+
+                </div>
+
+
                 <form
                     onSubmit={submit}
                     className="space-y-4 bg-white p-6 rounded-xl shadow-sm border"

@@ -18,7 +18,6 @@ export default function Home({ banners, news, documents }) {
                 <Hero banners={banners} />
                 <CarbonCredit />
                 <Services />
-                <Advantages />
                 <NewsInformationSection
                     news={news}
                     documents={documents}

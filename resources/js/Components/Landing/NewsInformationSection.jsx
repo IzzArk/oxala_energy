@@ -13,7 +13,7 @@ export default function NewsInformationSection({
 }) {
     const { t } = useTranslation("home");
     return (
-        <section className="py-24 bg-[#F7F9FF]">
+        <section className="py-24 bg-[#ffffff]">
             <div className="max-w-7xl mx-auto px-6">
 
                 <motion.div
@@ -41,7 +41,7 @@ export default function NewsInformationSection({
 
                     {/* BERITA */}
 
-                    <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+                    <div className="bg-[#F7F9FF] rounded-3xl p-8 border border-gray-100 shadow-sm">
 
                         <div className="flex items-center gap-3 mb-8">
 
@@ -115,7 +115,7 @@ export default function NewsInformationSection({
 
                     {/* DOKUMEN */}
 
-                    <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+                    <div className="bg-[#F7F9FF] rounded-3xl p-8 border border-gray-100 shadow-sm">
 
                         <div className="flex items-center gap-3 mb-8">
 

@@ -39,7 +39,7 @@ export default function CoreValues() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8 }}
-            className="py-24 bg-white"
+            className="py-24 bg-[#F7F9FF]"
         >
             <div className="max-w-7xl mx-auto px-6">
 

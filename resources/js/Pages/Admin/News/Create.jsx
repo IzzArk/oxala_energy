@@ -1,6 +1,8 @@
 import AdminLayout from "@/Layouts/AdminLayout";
 import { useForm } from "@inertiajs/react";
 import RichTextEditor from "@/Components/RichTextEditor";
+import { ArrowLeft } from "lucide-react";
+
 
 export default function Create() {
 
@@ -21,11 +23,26 @@ export default function Create() {
         <AdminLayout>
 
             <div className="max-w-5xl">
+                <div className="mb-8">
 
-                <h1 className="text-2xl font-bold mb-6">
-                    Tambah Berita
-                </h1>
+                    <a
+                        href="/admin/news"
+                        className="inline-flex items-center gap-2 text-gray-500 hover:text-[#23478F]"
+                    >
+                        <ArrowLeft size={18} />
 
+                        Kembali
+                    </a>
+
+                    <h1 className="text-2xl font-bold text-[#23478F] mt-4">
+                        Tambah Berita
+                    </h1>
+
+                    <p className="text-gray-500 mt-1">
+                        Tambahkan Berita Terbaru.
+                    </p>
+
+                </div>
                 <form
                     onSubmit={submit}
                     className="bg-white p-6 rounded-xl border shadow-sm space-y-5"

@@ -2,29 +2,14 @@ import { motion } from "framer-motion";
 import { User } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-export default function LeadershipSection() {
+export default function LeadershipSection({ leaders = [] }) {
     const { t } = useTranslation("about");
-
-    const leaders = [
-        {
-            name: t("about:leadership.leaders.leader1.name"),
-            position: t("about:leadership.leaders.leader1.position"),
-        },
-        {
-            name: t("about:leadership.leaders.leader2.name"),
-            position: t("about:leadership.leaders.leader2.position"),
-        },
-        {
-            name: t("about:leadership.leaders.leader3.name"),
-            position: t("about:leadership.leaders.leader3.position"),
-        }
-    ];
 
     return (
         <motion.section
             initial={{
                 opacity: 0,
-                y: 60,
+                y: 40,
             }}
             whileInView={{
                 opacity: 1,
@@ -35,170 +20,191 @@ export default function LeadershipSection() {
                 amount: 0.2,
             }}
             transition={{
-                duration: 0.8,
+                duration: 0.7,
             }}
-            className="py-24 bg-[#F8FAFC]"
+            className="py-20 md:py-24 bg-white"
         >
+            <div className="max-w-6xl mx-auto px-6">
 
-            <div className="max-w-7xl mx-auto px-6">
-
-                <div className="text-center mb-16">
+                {/* Header */}
+                <div className="text-center mb-14">
 
                     <span
                         className="
-                            inline-block
+                            inline-flex
+                            items-center
+                            gap-2
                             px-4
-                            py-2
+                            py-1.5
                             rounded-full
                             bg-[#EEF4D7]
                             text-[#7A9433]
-                            text-sm
-                            font-semibold
+                            text-[11px]
+                            font-medium
+                            tracking-[0.18em]
                             uppercase
-                            tracking-wider
-                            mb-4
                         "
                     >
+                        <span className="text-[#7A9433]">
+                            ✓
+                        </span>
+
                         {t("about:leadership.badge")}
                     </span>
 
-                    <h2 className="text-4xl font-bold text-[#23478F]">
+                    <h2
+                        className="
+                            mt-4
+                            text-3xl
+                            md:text-4xl
+                            font-bold
+                            text-[#123563]
+                        "
+                    >
                         {t("about:leadership.title")}
                     </h2>
 
-                    <div className="w-20 h-1 bg-[#B6C95C] rounded-full mx-auto mt-5"></div>
+                    <div
+                        className="
+                            w-14
+                            h-1
+                            bg-[#B6C95C]
+                            rounded-full
+                            mx-auto
+                            mt-4
+                        "
+                    />
 
                 </div>
 
-                <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+                {/* Leaders */}
+                <div
+                    className="
+                        grid
+                        grid-cols-1
+                        lg:grid-cols-2
+                        gap-x-8
+                        gap-y-12
+                        items-start
+                    "
+                >
 
                     {leaders.map((leader, index) => (
 
-                        <div
-                            key={index}
-                            className="
-                                group
-                                bg-white
-                                rounded-2xl
-                                overflow-hidden
-                                border
-                                border-gray-100
-                                shadow-sm
-                                hover:shadow-2xl
-                                hover:-translate-y-2
-                                hover:border-[#B6C95C]
-                                transition-all
-                                duration-300
-                            "
+                        <motion.div
+                            key={leader.id}
+                            initial={{
+                                opacity: 0,
+                                y: 20,
+                            }}
+                            whileInView={{
+                                opacity: 1,
+                                y: 0,
+                            }}
+                            viewport={{
+                                once: true,
+                            }}
+                            transition={{
+                                duration: 0.5,
+                                delay: index * 0.1,
+                            }}
+                            className="group text-center"
                         >
 
-                            {/* Accent */}
-
-                            <div className="h-1 bg-[#B6C95C]"></div>
-
-                            {/* Placeholder Photo */}
-
+                            {/* Photo */}
                             <div
                                 className="
-                                    relative
-                                    h-72
-                                    bg-gradient-to-br
-                                    from-[#EEF4D7]
-                                    to-[#F7F9FF]
+                                    mx-auto
+                                    w-64
+                                    h-64
+                                    md:w-72
+                                    md:h-72
+                                    lg:w-80
+                                    lg:h-80
                                     flex
-                                    items-center
+                                    items-end
                                     justify-center
+                                    transition-transform
+                                    duration-300
+                                    group-hover:scale-[1.03]
                                 "
                             >
 
-                                <div
-                                    className="
-                                        w-28
-                                        h-28
-                                        rounded-full
-                                        bg-white
-                                        shadow-lg
-                                        flex
-                                        items-center
-                                        justify-center
-                                        group-hover:scale-110
-                                        transition-transform
-                                        duration-300
-                                    "
-                                >
-
-                                    <User
-                                        size={54}
-                                        className="text-[#7A9433]"
+                                {leader.photo ? (
+                                    <img
+                                        src={`/storage/${leader.photo}`}
+                                        alt={leader.name}
+                                        className="
+                                            w-full
+                                            h-full
+                                            object-contain
+                                            object-bottom
+                                        "
                                     />
-
-                                </div>
-
-                                <span
-                                    className="
-                                        absolute
-                                        top-5
-                                        left-5
-                                        bg-white/90
-                                        backdrop-blur
-                                        text-[#7A9433]
-                                        px-3
-                                        py-1
-                                        rounded-full
-                                        text-xs
-                                        font-semibold
-                                        uppercase
-                                    "
-                                >
-                                    {t("about:leadership.badge")}
-                                </span>
-
-                            </div>
-
-                            {/* Content */}
-
-                            <div className="p-7 text-center">
-
-                                <h4
-                                    className="
-                                        text-xl
-                                        font-bold
-                                        text-[#23478F]
-                                        group-hover:text-[#7A9433]
-                                        transition-colors
-                                    "
-                                >
-                                    {leader.name}
-                                </h4>
-
-                                <p className="text-gray-500 mt-2">
-                                    {leader.position}
-                                </p>
-
-                                <div
-                                    className="
-                                        w-12
-                                        h-1
-                                        rounded-full
-                                        bg-[#B6C95C]
-                                        mx-auto
-                                        mt-5
-                                        group-hover:w-20
-                                        transition-all
-                                        duration-300
-                                    "
-                                />
+                                ) : (
+                                    <div
+                                        className="
+                                            w-32
+                                            h-32
+                                            md:w-40
+                                            md:h-40
+                                            rounded-full
+                                            bg-[#EEF4D7]
+                                            flex
+                                            items-center
+                                            justify-center
+                                        "
+                                    >
+                                        <User
+                                            size={64}
+                                            className="text-[#4C2A8A]"
+                                            strokeWidth={1.5}
+                                        />
+                                    </div>
+                                )}
 
                             </div>
 
-                        </div>
+                            {/* Position */}
+                            <p
+                                className="
+                                    mt-5
+                                    text-[11px]
+                                    md:text-sm
+                                    font-medium
+                                    tracking-[0.14em]
+                                    uppercase
+                                    text-[#9BAE3D]
+                                    leading-relaxed
+                                "
+                            >
+                                {leader.position}
+                            </p>
+
+                            {/* Name */}
+                            <h3
+                                className="
+                                    mt-2
+                                    text-base
+                                    md:text-lg
+                                    font-bold
+                                    text-[#123563]
+                                    leading-snug
+                                    transition-colors
+                                    duration-300
+                                    group-hover:text-[#7A9433]
+                                "
+                            >
+                                {leader.name}
+                            </h3>
+
+                        </motion.div>
 
                     ))}
 
                 </div>
 
             </div>
-
         </motion.section>
     );
 }

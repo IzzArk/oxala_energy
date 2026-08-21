@@ -141,22 +141,6 @@ export default function FinancialHighlights() {
 
                 </div>
 
-                <div
-                    className="
-                        mt-10
-                        rounded-2xl
-                        border
-                        border-[#D9E7A7]
-                        bg-[#F8FBEF]
-                        px-6
-                        py-5
-                    "
-                >
-                    <p className="text-sm text-gray-600 leading-7">
-                        {t("investor:financialHighlights.informationNote")}
-                    </p>
-                </div>
-
             </div>
         </motion.section>
     );

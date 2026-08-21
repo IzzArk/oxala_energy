@@ -12,6 +12,7 @@ class ContactController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
+            'category' => 'required|in:general,renewable-energy',
             'subject' => 'required',
             'message' => 'required',
         ]);

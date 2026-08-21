@@ -36,14 +36,14 @@
     },
     "visionMission": {
         "visionTitle": "VISI",
-        "vision": "Perusahaan Terdepan Dalam Membangun Ekosistem Yang Berkelanjutan",
+        "vision": "Menjadi perusahaan energi terintegrasi yang tepercaya di Indonesia, dengan membangun ekosistem yang berkelanjutan.",
         "missionTitle": "MISI",
         "missions": {
-            "1": "Meningkatkan Kompetensi Sumber Daya Manusia Berlandaskan Nilai Inti Perusahaan AKHLAK",
+            "1": "Meningkatkan Kompetensi Sumber Daya Manusia Berlandaskan Nilai Inti Perusahaan",
             "2": "Menghadirkan Produk dan Jasa Berkualitas Terbaik Dengan Menggunakan Teknologi Terkini dan Sistem Terintegrasi",
             "3": "Memperkuat Pengelolaan Keuangan, Manajemen Risiko, dan Tata Kelola Perusahaan",
             "4": "Mengoptimalkan Portofolio Bisnis yang Tepat dan Terukur serta Menjadi Agen Pembangunan Pemerintah Menuju Indonesia Maju",
-            "5": "Memperluas Jaringan Bisnis Internasional Dengan Menjadi Pemain Handal di Pasar Konstruksi Global",
+            "5": "Memperluas Jaringan Bisnis Domestik dan Internasional Dengan Menjadi Pemain Handal di Sektor Energi",
             "6": "Memperhatikan Kepedulian Sosial dan Keseimbangan Lingkungan Dalam Aktivitas Bisnis Perusahaan"
         }
     },
@@ -70,19 +70,23 @@
     },
     "leadership": {
         "badge": "Kepemimpinan",
-        "title": "Dewan Direksi & Dewan Komisaris",
+        "title": "Dewan Direksi & Komisaris",
         "leaders": {
             "leader1": {
-                "name": "Dr. Hendra Prasetyo",
+                "name": "Nicolas Sahrial Rasjid",
                 "position": "Komisaris Utama"
             },
             "leader2": {
-                "name": "Arif Nugroho",
-                "position": "Direktur Utama"
+                "name": "Ramdani Eka Saputra, SE., S.H., MM., MH.",
+                "position": "Komisaris Independen"
             },
             "leader3": {
-                "name": "Rangga Wicaksana",
-                "position": "Komisaris Independen"
+                "name": "Firriszky Ardi Nurtomo",
+                "position": "Direktur Utama"
+            },
+            "leader4": {
+                "name": "Noprian Fadli",
+                "position": "Direktur"
             }
         }
     },

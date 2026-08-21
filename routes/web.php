@@ -5,37 +5,26 @@ use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GovernanceDocumentController;
 use App\Http\Controllers\Admin\InvestorCalendarController;
+use App\Http\Controllers\Admin\LeadershipController;
 use App\Http\Controllers\Admin\NewsControllerAdmin;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\frontend\AboutController;
 use App\Http\Controllers\Frontend\NewsController;
 use App\Http\Controllers\Frontend\InvestorRelationsController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\frontend\InformationController;
 use App\Http\Controllers\ProfileController;
-
-use App\Models\GovernanceDocument;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/tentang-kami', function () {
-
-    return Inertia::render('About');
-});
-
+Route::get('/tentang-kami', [AboutController::class, 'index']);
 
 Route::get('/hubungan-investor', [InvestorRelationsController::class, 'index']);
 
-Route::get('/keterbukaan-informasi', function () {
-    $documents = GovernanceDocument::where('is_active', true)
-        ->orderBy('sort_order', 'desc')
-        ->get();
-
-    return Inertia::render('InformationDisclosure', [
-        'documents' => $documents
-    ]);
-});
+Route::get('/keterbukaan-informasi', [InformationController::class, 'index']);
 
 Route::get('/produk', function () {
     return Inertia::render('Products');
@@ -95,14 +84,29 @@ Route::middleware(['auth'])
         );
     });
 
-Route::middleware(['auth'])
-    ->prefix('admin')
+Route::prefix('admin')
+    ->middleware(['auth'])
     ->group(function () {
 
-        Route::resource(
-            'contacts',
-            AdminContactController::class
-        );
+        Route::get(
+            '/contacts/general',
+            [AdminContactController::class, 'general']
+        )->name('contacts.general');
+
+        Route::get(
+            '/contacts/renewable-energy',
+            [AdminContactController::class, 'renewable']
+        )->name('contacts.renewable-energy');
+
+        Route::get(
+            '/contacts/{contact}',
+            [AdminContactController::class, 'show']
+        )->name('contacts.show');
+
+        Route::delete(
+            '/contacts/{contact}',
+            [AdminContactController::class, 'destroy']
+        )->name('contacts.destroy');
     });
 
 Route::prefix('admin')
@@ -133,6 +137,17 @@ Route::middleware(['auth'])
         Route::resource(
             'investor-calendar',
             InvestorCalendarController::class
+        );
+    });
+
+
+Route::prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+
+        Route::resource(
+            'leadership',
+            LeadershipController::class
         );
     });
 

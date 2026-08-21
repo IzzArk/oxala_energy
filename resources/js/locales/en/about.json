@@ -36,15 +36,15 @@
     },
     "visionMission": {
         "visionTitle": "VISION",
-        "vision": "To Become a Leading Company in Building a Sustainable Ecosystem",
+        "vision": "To become a trusted integrated energy company in Indonesia by building a sustainable ecosystem.",
         "missionTitle": "MISSION",
         "missions": {
-            "1": "Enhance human resource competencies based on the Company's AKHLAK core values.",
-            "2": "Deliver high-quality products and services through advanced technology and integrated systems.",
-            "3": "Strengthen financial management, risk management, and corporate governance.",
-            "4": "Optimize strategic and measurable business portfolios while contributing to Indonesia’s national development.",
-            "5": "Expand our international business network by becoming a trusted player in the global construction market.",
-            "6": "Promote social responsibility and environmental sustainability across all business activities."
+            "1": "Enhance Human Resources Competencies Based on the Company's Core Values",
+            "2": "Deliver the Highest-Quality Products and Services by Utilizing the Latest Technologies and Integrated Systems",
+            "3": "Strengthen Financial Management, Risk Management, and Corporate Governance",
+            "4": "Optimize the Business Portfolio in a Strategic and Measurable Manner and Serve as a Government Development Partner in Advancing Indonesia",
+            "5": "Expand Domestic and International Business Networks by Becoming a Reliable Player in the Energy Sector",
+            "6": "Promote Social Responsibility and Environmental Balance in the Company's Business Activities"
         }
     },
     "coreValues": {
@@ -70,19 +70,23 @@
     },
     "leadership": {
         "badge": "Leadership",
-        "title": "Board of Directors & Board of Commissioners",
+        "title": "Board of Directors & Commissioners",
         "leaders": {
             "leader1": {
-                "name": "Dr. Hendra Prasetyo",
+                "name": "Nicolas Sahrial Rasjid",
                 "position": "President Commissioner"
             },
             "leader2": {
-                "name": "Arif Nugroho",
-                "position": "President Director"
+                "name": "Ramdani Eka Saputra, SE., S.H., MM., MH.",
+                "position": "Independent Commissioner"
             },
             "leader3": {
-                "name": "Rangga Wicaksana",
-                "position": "Independent Commissioner"
+                "name": "Firriszky Ardi Nurtomo",
+                "position": "President Director"
+            },
+            "leader4": {
+                "name": "Noprian Fadli",
+                "position": "Director"
             }
         }
     },
