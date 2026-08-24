@@ -2,276 +2,393 @@ name: Hostinger Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+
   workflow_dispatch:
 
 jobs:
-  tests:
-    name: Run Tests
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.3'
-          extensions: mbstring, xml, bcmath, pdo_mysql, pdo_sqlite, gd, zip
-          coverage: none
-
-      - name: Copy .env
-        run: |
-          if [ -f .env.example ]; then
-            cp .env.example .env
-          else
-            echo "⚠️ .env.example not found, creating minimal .env"
-            echo "APP_ENV=testing" > .env
-            echo "APP_KEY=" >> .env
-          fi
-
-      - name: Install Composer Dependencies
-        run: composer install --prefer-dist --no-interaction --no-progress
-
-      - name: Generate Application Key
-        run: php artisan key:generate --ansi
-
-      - name: Run PHPUnit Tests
-        continue-on-error: true
-        run: |
-          if [ -f phpunit.xml ] || [ -f phpunit.xml.dist ]; then
-            php artisan test || php vendor/bin/phpunit
-          else
-            echo "⚠️ No PHPUnit configuration found, skipping tests"
-          fi
-
-      - name: Run Static Analysis (PHPStan/Pint)
-        continue-on-error: true
-        run: |
-          if [ -f vendor/bin/phpstan ]; then
-            vendor/bin/phpstan analyse --no-progress || echo "⚠️ PHPStan check failed or not configured"
-          fi
-          if [ -f vendor/bin/pint ]; then
-            vendor/bin/pint --test || echo "⚠️ Pint check failed or not configured"
-          fi
-
-  build-assets:
-    name: Build Frontend Assets
-    runs-on: ubuntu-latest
-    continue-on-error: true
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.3'
-          extensions: mbstring, xml, bcmath, pdo_mysql, pdo_sqlite, gd, zip
-          coverage: none
-
-      - name: Copy .env
-        run: |
-          if [ -f .env.example ]; then
-            cp .env.example .env
-          else
-            echo "⚠️ .env.example not found, creating minimal .env"
-            echo "APP_ENV=testing" > .env
-            echo "APP_KEY=" >> .env
-          fi
-
-      - name: Install Composer Dependencies
-        run: composer install --prefer-dist --no-interaction --no-progress
-
-      - name: Generate Application Key
-        run: php artisan key:generate --ansi
-
-      - name: Check for package.json
-        id: check_package
-        run: |
-          if [ -f package.json ]; then
-            echo "exists=true" >> $GITHUB_OUTPUT
-          else
-            echo "exists=false" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Setup Node.js
-        if: steps.check_package.outputs.exists == 'true'
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: ${{ hashFiles('package-lock.json') != '' && 'npm' || '' }}
-
-      - name: Install NPM Dependencies
-        if: steps.check_package.outputs.exists == 'true'
-        continue-on-error: true
-        run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            echo "ℹ️ No package-lock.json found, using npm install"
-            npm install
-          fi
-
-      - name: Build Assets
-        if: steps.check_package.outputs.exists == 'true'
-        continue-on-error: true
-        run: |
-          if grep -q "\"build\"" package.json || grep -q "\"prod\"" package.json; then
-            npm run build || npm run prod || echo "⚠️ Build script not found or failed"
-          else
-            echo "⚠️ No build script found in package.json"
-          fi
-
-      - name: Upload Built Assets
-        if: steps.check_package.outputs.exists == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-assets
-          path: public/build/
-          if-no-files-found: ignore
-          retention-days: 1
-
   deploy:
-    name: Deploy to Hostinger
+    name: Deploy Laravel to Hostinger
     runs-on: ubuntu-latest
-    needs: [tests, build-assets]
-    if: success() || failure() # Deploy even if tests fail (you can change to 'success()' to require passing tests)
-    
+
     steps:
-      - name: Checkout code
+
+      # ==================================================
+      # 1. Checkout repository
+      # ==================================================
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.3'
-          extensions: mbstring, xml, bcmath, pdo_mysql
-
-      - name: Download Built Assets
-        uses: actions/download-artifact@v4
-        with:
-          name: build-assets
-          path: public/build/
-        continue-on-error: true
-
-      - name: Setup Node.js (for asset building)
-        if: hashFiles('package.json') != ''
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: ${{ hashFiles('package-lock.json') != '' && 'npm' || '' }}
-
-      - name: Build Frontend Assets (if needed)
-        continue-on-error: true
-        if: hashFiles('package.json') != ''
-        run: |
-          echo "📦 Installing NPM dependencies..."
-          if [ -f package-lock.json ]; then
-            npm ci --prefer-offline --no-audit || npm install --prefer-offline --no-audit
-          else
-            echo "ℹ️ No package-lock.json found, using npm install"
-            npm install --prefer-offline --no-audit
-          fi
-          
-          if grep -q "\"build\"" package.json || grep -q "\"prod\"" package.json; then
-            echo "🔨 Building assets for production..."
-            npm run build || npm run prod || echo "⚠️ Build script not found or failed"
-            echo "ℹ️ Note: Built assets should be committed to your repository for deployment"
-            echo "   (NPM may not be available on the remote server)"
-          else
-            echo "ℹ️ No build script found in package.json"
-          fi
-
+      # ==================================================
+      # 2. Install SSH key
+      # ==================================================
       - name: Install SSH key
+        shell: bash
         run: |
-          mkdir -p ~/.ssh/
+          set -e
+
+          mkdir -p ~/.ssh
+
           echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Copy Build Files to Target Server
-        continue-on-error: true
+          ssh-keyscan \
+            -p "${{ secrets.SSH_PORT }}" \
+            "${{ secrets.SSH_HOST }}" \
+            >> ~/.ssh/known_hosts
+
+      # ==================================================
+      # 3. Test SSH
+      # ==================================================
+      - name: Test SSH connection
+        shell: bash
         run: |
-          if [ -d "${{ github.workspace }}/public/build" ]; then
-            rsync -r -e "ssh -p ${{ secrets.SSH_PORT }}" ${{ github.workspace }}/public/build/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:~/domains/${{ secrets.WEBSITE_FOLDER }}/public/build
-          else
-            echo "ℹ️ No build directory found, skipping asset copy"
-          fi
+          set -e
 
-      - name: Deploy to Hostinger Server
-        uses: appleboy/ssh-action@master
+          ssh \
+            -p "${{ secrets.SSH_PORT }}" \
+            -i ~/.ssh/id_rsa \
+            "${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}" \
+            "echo 'SSH connection successful'"
+
+      # ==================================================
+      # 4. Deploy
+      # ==================================================
+      - name: Deploy to Hostinger
+        uses: appleboy/ssh-action@v1.2.2
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
+
           script: |
             set -e
-            
-            echo "🚀 Starting deployment..."
-            
-            cd domains/${{ secrets.WEBSITE_FOLDER }}
-            
-            # Ensure we're on the correct branch
-            git fetch origin
-            git checkout main
-            git reset --hard origin/main
-            
-            echo "📦 Installing Composer dependencies..."
-            composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
-            
-            # Note: Frontend assets should already be built and committed
-            # If you need to build on server, ensure npm/node is available
-            # and uncomment the following lines:
-            # if [ -f package.json ]; then
-            #   npm ci --production && npm run build || npm run prod
-            # fi
-            
-            echo "🔧 Running Laravel setup commands..."
-            
-            # Run migrations
-            php artisan migrate --force
-            
-            # Clear and cache configuration
-            php artisan config:clear
-            php artisan config:cache
-            
-            # Clear and cache routes
-            php artisan route:clear
-            php artisan route:cache
-            
-            # Clear and cache views
-            php artisan view:clear
-            php artisan view:cache
-            
-            # Optimize application
-            php artisan optimize:clear
-            php artisan optimize
-            
-            # Clear and cache events (if available)
-            php artisan event:clear || true
-            php artisan event:cache || true
-            
-            # Restart queue workers (if using queues)
-            php artisan queue:restart || true
-            
-            # Restart Horizon (if using Laravel Horizon)
-            php artisan horizon:terminate || true
-            
-            # Clear application cache
-            php artisan cache:clear
-            
-            # Clear OPcache (if available)
-            php artisan opcache:clear || true
-            
-            echo "✅ Deployment completed successfully!"
-            
-            # Show deployment info
+
+            echo "=========================================="
+            echo "🚀 Starting Laravel deployment"
+            echo "=========================================="
+
+            # ==================================================
+            # VARIABLES
+            # ==================================================
+
+            APP_DIR="$HOME/domains/${{ secrets.WEBSITE_FOLDER }}"
+
             echo ""
-            echo "📊 Deployment Information:"
-            echo "   Branch: main"
-            echo "   Commit: $(git rev-parse --short HEAD)"
-            echo "   Date: $(date)"
+            echo "📁 Application directory:"
+            echo "$APP_DIR"
+
+            # ==================================================
+            # CHECK APPLICATION DIRECTORY
+            # ==================================================
+
+            if [ ! -d "$APP_DIR" ]; then
+                echo "❌ Application directory does not exist:"
+                echo "$APP_DIR"
+                exit 1
+            fi
+
+            cd "$APP_DIR"
+
+            echo ""
+            echo "📍 Current directory:"
+            pwd
+
+            # ==================================================
+            # CHECK GIT REPOSITORY
+            # ==================================================
+
+            if [ ! -d ".git" ]; then
+                echo "❌ Git repository not found!"
+                exit 1
+            fi
+
+            echo ""
+            echo "🔎 Git repository:"
+            git rev-parse --show-toplevel
+
+            # ==================================================
+            # CHECK IMPORTANT FILES
+            # ==================================================
+
+            if [ ! -f "artisan" ]; then
+                echo "❌ Laravel artisan file not found!"
+                exit 1
+            fi
+
+            if [ ! -f "composer.json" ]; then
+                echo "❌ composer.json not found!"
+                exit 1
+            fi
+
+            # ==================================================
+            # PROTECT IMPORTANT DIRECTORIES
+            # ==================================================
+
+            echo ""
+            echo "🔒 Checking important directories..."
+
+            if [ ! -d "storage" ]; then
+                echo "❌ storage directory does not exist!"
+                exit 1
+            fi
+
+            if [ ! -f ".env" ]; then
+                echo "❌ .env does not exist!"
+                echo "Deployment stopped to protect production configuration."
+                exit 1
+            fi
+
+            # ==================================================
+            # BACKUP CURRENT COMMIT
+            # ==================================================
+
+            CURRENT_COMMIT=$(git rev-parse HEAD)
+
+            echo ""
+            echo "📌 Current production commit:"
+            echo "$CURRENT_COMMIT"
+
+            # ==================================================
+            # FETCH LATEST CODE
+            # ==================================================
+
+            echo ""
+            echo "📥 Fetching latest code..."
+
+            git fetch origin main
+
+            TARGET_COMMIT=$(git rev-parse origin/main)
+
+            echo ""
+            echo "📌 Target commit:"
+            echo "$TARGET_COMMIT"
+
+            # ==================================================
+            # UPDATE SOURCE CODE
+            # ==================================================
+
+            echo ""
+            echo "🔄 Updating source code..."
+
+            git checkout main
+
+            git reset --hard origin/main
+
+            # ==================================================
+            # VERIFY IMPORTANT FILES AFTER UPDATE
+            # ==================================================
+
+            echo ""
+            echo "🔎 Verifying deployment..."
+
+            if [ ! -f ".env" ]; then
+                echo "❌ .env disappeared after Git update!"
+                echo "Restoring previous commit..."
+
+                git reset --hard "$CURRENT_COMMIT"
+
+                exit 1
+            fi
+
+            if [ ! -d "storage" ]; then
+                echo "❌ storage disappeared after Git update!"
+                echo "Restoring previous commit..."
+
+                git reset --hard "$CURRENT_COMMIT"
+
+                exit 1
+            fi
+
+            if [ ! -d "public" ]; then
+                echo "❌ public directory missing!"
+                exit 1
+            fi
+
+            if [ ! -f "public/index.php" ]; then
+                echo "❌ public/index.php missing!"
+                exit 1
+            fi
+
+            # ==================================================
+            # COMPOSER
+            # ==================================================
+
+            echo ""
+            echo "📦 Installing Composer dependencies..."
+
+            composer install \
+              --no-dev \
+              --optimize-autoloader \
+              --no-interaction \
+              --prefer-dist
+
+            # ==================================================
+            # STORAGE LINK
+            # ==================================================
+
+            echo ""
+            echo "🔗 Checking storage link..."
+
+            if [ ! -L "public/storage" ]; then
+                php artisan storage:link
+            else
+                echo "✅ Storage link already exists"
+            fi
+
+            # ==================================================
+            # DATABASE BACKUP
+            # ==================================================
+
+            echo ""
+            echo "💾 Creating database backup..."
+
+            BACKUP_DIR="$HOME/database-backups"
+
+            mkdir -p "$BACKUP_DIR"
+
+            BACKUP_FILE="$BACKUP_DIR/database-$(date +%Y%m%d-%H%M%S).sql"
+
+            if command -v mysqldump >/dev/null 2>&1; then
+
+                DB_CONNECTION=$(grep '^DB_CONNECTION=' .env | cut -d '=' -f2-)
+
+                if [ "$DB_CONNECTION" = "mysql" ]; then
+
+                    DB_HOST=$(grep '^DB_HOST=' .env | cut -d '=' -f2-)
+                    DB_PORT=$(grep '^DB_PORT=' .env | cut -d '=' -f2-)
+                    DB_DATABASE=$(grep '^DB_DATABASE=' .env | cut -d '=' -f2-)
+                    DB_USERNAME=$(grep '^DB_USERNAME=' .env | cut -d '=' -f2-)
+                    DB_PASSWORD=$(grep '^DB_PASSWORD=' .env | cut -d '=' -f2-)
+
+                    if [ -n "$DB_HOST" ] && \
+                       [ -n "$DB_DATABASE" ] && \
+                       [ -n "$DB_USERNAME" ]; then
+
+                        MYSQL_PWD="$DB_PASSWORD" mysqldump \
+                          -h "$DB_HOST" \
+                          -P "${DB_PORT:-3306}" \
+                          -u "$DB_USERNAME" \
+                          "$DB_DATABASE" \
+                          > "$BACKUP_FILE"
+
+                        echo "✅ Database backup created:"
+                        echo "$BACKUP_FILE"
+
+                    else
+                        echo "⚠️ Database credentials incomplete."
+                        echo "⚠️ Skipping database backup."
+                    fi
+
+                else
+                    echo "ℹ️ Database is not MySQL."
+                    echo "ℹ️ Skipping mysqldump."
+                fi
+
+            else
+                echo "⚠️ mysqldump not available."
+                echo "⚠️ Skipping database backup."
+            fi
+
+            # ==================================================
+            # RUN MIGRATIONS
+            # ==================================================
+
+            echo ""
+            echo "🗄️ Running Laravel migrations..."
+
+            php artisan migrate --force
+
+            # ==================================================
+            # CLEAR CACHE
+            # ==================================================
+
+            echo ""
+            echo "🧹 Clearing Laravel cache..."
+
+            php artisan optimize:clear
+
+            # ==================================================
+            # CACHE CONFIGURATION
+            # ==================================================
+
+            echo ""
+            echo "⚡ Caching configuration..."
+
+            php artisan config:cache
+
+            # ==================================================
+            # CACHE ROUTES
+            # ==================================================
+
+            echo ""
+            echo "⚡ Caching routes..."
+
+            php artisan route:cache
+
+            # ==================================================
+            # CACHE VIEWS
+            # ==================================================
+
+            echo ""
+            echo "⚡ Caching views..."
+
+            php artisan view:cache
+
+            # ==================================================
+            # QUEUE
+            # ==================================================
+
+            echo ""
+            echo "🔄 Restarting queue workers..."
+
+            php artisan queue:restart || true
+
+            # ==================================================
+            # FINAL CHECK
+            # ==================================================
+
+            echo ""
+            echo "🔎 Final deployment check..."
+
+            if [ ! -f ".env" ]; then
+                echo "❌ .env missing!"
+                exit 1
+            fi
+
+            if [ ! -d "storage" ]; then
+                echo "❌ storage missing!"
+                exit 1
+            fi
+
+            if [ ! -f "public/index.php" ]; then
+                echo "❌ public/index.php missing!"
+                exit 1
+            fi
+
+            # ==================================================
+            # DEPLOYMENT SUCCESS
+            # ==================================================
+
+            echo ""
+            echo "=========================================="
+            echo "✅ Deployment completed successfully!"
+            echo "=========================================="
+
+            echo ""
+            echo "📊 Deployment information:"
+            echo "Commit: $(git rev-parse --short HEAD)"
+            echo "Date: $(date)"
+            echo "Directory: $(pwd)"
+
+            echo ""
+            echo "📁 Important directories:"
+            echo "Storage: $(du -sh storage 2>/dev/null | cut -f1)"
+            echo "Public:  $(du -sh public 2>/dev/null | cut -f1)"
+            echo "Vendor:  $(du -sh vendor 2>/dev/null | cut -f1)"
+
+            echo ""
+            echo "🎉 Done!"

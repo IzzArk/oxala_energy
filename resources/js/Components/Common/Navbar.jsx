@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X, ChevronDown, Globe } from "lucide-react";
 import { Link, usePage } from "@inertiajs/react";
-import Logo from "../../../Assets/Oxala-Logo.png";
+import Logo from "../../../Assets/LOGO-OXALA.png";
 import { useTranslation } from "react-i18next";
 import "flag-icons/css/flag-icons.min.css";
 
@@ -39,7 +39,7 @@ export default function Navbar() {
                         <img
                             src={Logo}
                             alt="Oxala"
-                            className="h-15"
+                            className="h-20"
                         />
                     </Link>
 
