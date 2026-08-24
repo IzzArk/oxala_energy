@@ -31,7 +31,7 @@ export default function CompanyOverview() {
 
                         <img
                             src={Logo}
-                            className="rounded-xl shadow-lg w-auto h-100 items-center"
+                            className="w-auto h-100 items-center"
                         />
 
                     </div>

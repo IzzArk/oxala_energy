@@ -143,8 +143,6 @@ export default function CompanyTimeline() {
                                                 className="
                                                     w-12
                                                     h-12
-                                                    rounded-xl
-                                                    bg-[#EEF4D7]
                                                     flex
                                                     items-center
                                                     justify-center
@@ -155,7 +153,7 @@ export default function CompanyTimeline() {
 
                                                 <Icon
                                                     className="text-[#7A9433]"
-                                                    size={22}
+                                                    size={30}
                                                 />
 
                                             </div>
