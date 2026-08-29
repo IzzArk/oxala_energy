@@ -63,6 +63,7 @@ class GovernanceDocumentController extends Controller
 
         GovernanceDocument::create([
             'title'       => $request->title,
+            'category'    => $request->category,
             'description' => $request->description,
             'file'        => $path,
             'sort_order'  => $request->sort_order ?? 0,
@@ -93,6 +94,7 @@ class GovernanceDocumentController extends Controller
     ) {
         $request->validate([
             'title'       => 'required|string|max:255',
+            'category'    => 'required|string|max:255',
             'description' => 'nullable|string',
             'file'        => 'nullable|mimes:pdf|max:10240',
             'sort_order'  => 'nullable|integer',
@@ -101,6 +103,7 @@ class GovernanceDocumentController extends Controller
 
         $data = [
             'title'       => $request->title,
+            'category'    => $request->category,
             'description' => $request->description,
             'sort_order'  => $request->sort_order ?? 0,
             'is_active'   => $request->boolean('is_active'),

@@ -1,6 +1,12 @@
 import AdminLayout from "@/Layouts/AdminLayout";
-import { Head, Link, useForm } from "@inertiajs/react";
-import { ArrowLeft, Upload, UserRound } from "lucide-react";
+import { Head, Link, useForm, router } from "@inertiajs/react";
+import {
+    ArrowLeft,
+    Upload,
+    ImagePlus,
+    Trash2,
+} from "lucide-react";
+
 import {
     AlertDialog,
     AlertDialogAction,
@@ -14,10 +20,17 @@ import {
 } from "@/components/ui/alert-dialog";
 
 export default function Edit({ leader }) {
-    const { data, setData, post, processing, errors } = useForm({
+    const {
+        data,
+        setData,
+        post,
+        processing,
+        errors,
+    } = useForm({
         name: leader.name ?? "",
         position: leader.position ?? "",
-        image: null,
+        photo: null,
+        sort_order: leader.sort_order ?? "",
         is_active: Boolean(leader.is_active),
         _method: "PUT",
     });
@@ -29,62 +42,69 @@ export default function Edit({ leader }) {
             forceFormData: true,
         });
     };
+
     const deleteLeader = () => {
         router.delete(`/admin/leadership/${leader.id}`);
     };
 
     return (
         <AdminLayout>
+
             <Head title="Edit Leadership" />
 
-            <div className="p-6 max-w-4xl">
+            <div className="max-w-4xl">
+
                 {/* Header */}
-                <div className="flex items-center gap-4 mb-8">
+
+                <div className="mb-8">
+
                     <Link
                         href={route("admin.leadership.index")}
                         className="
-                            w-10
-                            h-10
-                            rounded-lg
-                            border
-                            border-gray-200
-                            flex
+                            inline-flex
                             items-center
-                            justify-center
-                            text-gray-600
-                            hover:bg-gray-50
+                            gap-2
+                            text-gray-500
+                            hover:text-[#23478F]
                             transition
                         "
                     >
-                        <ArrowLeft size={19} />
+                        <ArrowLeft size={18} />
+
+                        Kembali
                     </Link>
 
-                    <div>
-                        <h1 className="text-2xl font-bold text-[#123563]">
-                            Edit Leadership
-                        </h1>
+                    <h1 className="text-2xl font-bold text-[#23478F] mt-4">
+                        Edit Leadership
+                    </h1>
 
-                        <p className="text-sm text-gray-500 mt-1">
-                            Perbarui informasi pimpinan perusahaan.
-                        </p>
-                    </div>
+                    <p className="text-gray-500 mt-1">
+                        Perbarui informasi pimpinan perusahaan.
+                    </p>
+
                 </div>
 
+
                 {/* Form */}
+
                 <form
                     onSubmit={submit}
                     className="
                         bg-white
+                        rounded-2xl
                         border
-                        border-gray-200
-                        rounded-xl
+                        border-gray-100
                         shadow-sm
-                        p-6
+                        p-8
+                        space-y-6
                     "
                 >
+
                     {/* Nama */}
-                    <div className="mb-6">
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+
+                    <div>
+
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
                             Nama
                         </label>
 
@@ -92,34 +112,41 @@ export default function Edit({ leader }) {
                             type="text"
                             value={data.name}
                             onChange={(e) =>
-                                setData("name", e.target.value)
+                                setData(
+                                    "name",
+                                    e.target.value
+                                )
                             }
                             placeholder="Masukkan nama lengkap"
                             className="
                                 w-full
-                                rounded-lg
                                 border
-                                border-gray-300
+                                border-gray-200
+                                rounded-xl
                                 px-4
                                 py-3
-                                text-sm
-                                focus:border-[#23478F]
+                                focus:outline-none
                                 focus:ring-2
-                                focus:ring-[#23478F]/10
-                                outline-none
+                                focus:ring-[#B6C95C]
+                                focus:border-[#B6C95C]
+                                transition
                             "
                         />
 
                         {errors.name && (
-                            <p className="mt-2 text-sm text-red-500">
+                            <p className="text-red-500 text-sm mt-1">
                                 {errors.name}
                             </p>
                         )}
+
                     </div>
 
+
                     {/* Jabatan */}
-                    <div className="mb-6">
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+
+                    <div>
+
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
                             Jabatan
                         </label>
 
@@ -127,41 +154,52 @@ export default function Edit({ leader }) {
                             type="text"
                             value={data.position}
                             onChange={(e) =>
-                                setData("position", e.target.value)
+                                setData(
+                                    "position",
+                                    e.target.value
+                                )
                             }
                             placeholder="Contoh: Komisaris Utama"
                             className="
                                 w-full
-                                rounded-lg
                                 border
-                                border-gray-300
+                                border-gray-200
+                                rounded-xl
                                 px-4
                                 py-3
-                                text-sm
-                                focus:border-[#23478F]
+                                focus:outline-none
                                 focus:ring-2
-                                focus:ring-[#23478F]/10
-                                outline-none
+                                focus:ring-[#B6C95C]
+                                focus:border-[#B6C95C]
+                                transition
                             "
                         />
 
                         {errors.position && (
-                            <p className="mt-2 text-sm text-red-500">
+                            <p className="text-red-500 text-sm mt-1">
                                 {errors.position}
                             </p>
                         )}
+
                     </div>
 
+
                     {/* Foto */}
-                    <div className="mb-6">
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                            Foto
+
+                    <div>
+
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Foto Pimpinan
                         </label>
 
-                        {/* Existing Image */}
-                        {leader.image && (
+
+                        {/* Foto Saat Ini */}
+
+                        {leader.photo && (
+
                             <div className="mb-4">
-                                <p className="text-xs text-gray-500 mb-2">
+
+                                <p className="text-sm text-gray-500 mb-2">
                                     Foto saat ini
                                 </p>
 
@@ -176,8 +214,9 @@ export default function Edit({ leader }) {
                                         border-gray-200
                                     "
                                 >
+
                                     <img
-                                        src={`/storage/${leader.image}`}
+                                        src={`/storage/${leader.photo}`}
                                         alt={leader.name}
                                         className="
                                             w-full
@@ -185,9 +224,15 @@ export default function Edit({ leader }) {
                                             object-cover
                                         "
                                     />
+
                                 </div>
+
                             </div>
+
                         )}
+
+
+                        {/* Upload */}
 
                         <label
                             className="
@@ -196,32 +241,37 @@ export default function Edit({ leader }) {
                                 items-center
                                 justify-center
                                 w-full
-                                min-h-40
+                                h-56
                                 border-2
                                 border-dashed
-                                border-gray-300
+                                border-gray-200
                                 rounded-xl
                                 cursor-pointer
-                                hover:border-[#23478F]
-                                hover:bg-gray-50
+                                hover:border-[#B6C95C]
+                                hover:bg-[#FAFCF3]
                                 transition
                             "
                         >
+
                             <Upload
-                                size={28}
-                                className="text-gray-400"
+                                size={32}
+                                className="text-gray-400 mb-3"
                             />
 
-                            <span className="mt-3 text-sm font-medium text-gray-600">
-                                Pilih foto baru
+                            <span className="text-sm text-gray-600">
+                                Klik untuk mengganti foto
                             </span>
 
-                            <span className="mt-1 text-xs text-gray-400">
-                                JPG, JPEG, PNG — rasio 4:3
+                            <span className="text-xs text-gray-400 mt-1">
+                                JPG, JPEG, PNG · Rasio 4:3
                             </span>
 
                             <span className="text-xs text-gray-400">
                                 Contoh: 1200 × 900 px
+                            </span>
+
+                            <span className="text-xs text-[#7A9433] font-medium mt-1">
+                                Gunakan gambar dengan kualitas terbaik
                             </span>
 
                             <input
@@ -230,30 +280,49 @@ export default function Edit({ leader }) {
                                 className="hidden"
                                 onChange={(e) =>
                                     setData(
-                                        "image",
+                                        "photo",
                                         e.target.files[0]
                                     )
                                 }
                             />
+
                         </label>
 
-                        {data.image && (
-                            <p className="mt-2 text-xs text-green-600">
-                                File baru: {data.image.name}
+
+                        {/* Selected File */}
+
+                        {data.photo && (
+
+                            <div className="mt-3 flex items-center gap-2 text-sm text-gray-500">
+
+                                <ImagePlus size={16} />
+
+                                <span>
+                                    File baru:{" "}
+                                    <span className="font-medium">
+                                        {data.photo.name}
+                                    </span>
+                                </span>
+
+                            </div>
+
+                        )}
+
+
+                        {errors.photo && (
+                            <p className="text-red-500 text-sm mt-1">
+                                {errors.photo}
                             </p>
                         )}
 
-                        {errors.image && (
-                            <p className="mt-2 text-sm text-red-500">
-                                {errors.image}
-                            </p>
-                        )}
+
+                        {/* Image Note */}
 
                         <div
                             className="
                                 mt-3
-                                p-3
-                                rounded-lg
+                                p-4
+                                rounded-xl
                                 bg-[#F7F9FF]
                                 border
                                 border-[#E4EAF5]
@@ -262,16 +331,81 @@ export default function Edit({ leader }) {
                             "
                         >
                             <strong>Catatan foto:</strong>{" "}
-                            Gunakan foto dengan rasio <strong>4:3</strong>{" "}
-                            agar tampilan di website tetap proporsional.
-                            Disarankan menggunakan ukuran{" "}
-                            <strong>1200 × 900 px</strong> atau lebih.
+                            Gunakan foto dengan rasio{" "}
+                            <strong>4:3</strong> agar tampilan di website
+                            tetap proporsional. Disarankan menggunakan
+                            ukuran <strong>1200 × 900 px</strong> atau lebih.
                         </div>
+
                     </div>
 
-                    {/* Active */}
-                    <div className="mb-8">
-                        <label className="flex items-center gap-3 cursor-pointer">
+
+                    {/* Urutan */}
+
+                    <div>
+
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Urutan
+                        </label>
+
+                        <input
+                            type="number"
+                            min="0"
+                            value={data.sort_order}
+                            onChange={(e) =>
+                                setData(
+                                    "sort_order",
+                                    e.target.value
+                                )
+                            }
+                            placeholder="Contoh: 1"
+                            className="
+                                w-full
+                                border
+                                border-gray-200
+                                rounded-xl
+                                px-4
+                                py-3
+                                focus:outline-none
+                                focus:ring-2
+                                focus:ring-[#B6C95C]
+                                focus:border-[#B6C95C]
+                                transition
+                            "
+                        />
+
+                        {errors.sort_order && (
+                            <p className="text-red-500 text-sm mt-1">
+                                {errors.sort_order}
+                            </p>
+                        )}
+
+                        <p className="text-xs text-gray-400 mt-2">
+                            Tentukan urutan tampil pimpinan pada halaman website.
+                        </p>
+
+                    </div>
+
+
+                    {/* Status */}
+
+                    <div>
+
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Status
+                        </label>
+
+                        <label
+                            className="
+                                flex
+                                items-center
+                                gap-3
+                                w-fit
+                                cursor-pointer
+                                select-none
+                            "
+                        >
+
                             <input
                                 type="checkbox"
                                 checked={data.is_active}
@@ -287,100 +421,164 @@ export default function Edit({ leader }) {
                                     rounded
                                     border-gray-300
                                     text-[#23478F]
-                                    focus:ring-[#23478F]
+                                    focus:ring-[#B6C95C]
                                 "
                             />
 
                             <div>
-                                <p className="text-sm font-semibold text-gray-700">
-                                    Active
+
+                                <p className="text-sm font-medium text-gray-700">
+                                    Aktifkan pimpinan
                                 </p>
 
-                                <p className="text-xs text-gray-500">
-                                    Tampilkan pimpinan ini pada halaman
-                                    website.
+                                <p className="text-xs text-gray-500 mt-0.5">
+                                    Tampilkan pimpinan ini pada halaman website.
                                 </p>
+
                             </div>
+
                         </label>
+
+                        {errors.is_active && (
+                            <p className="text-red-500 text-sm mt-1">
+                                {errors.is_active}
+                            </p>
+                        )}
+
                     </div>
 
-                    {/* Buttons */}
-                    <div className="flex justify-end gap-3 pt-5 border-t">
 
-                        <Link
-                            href={route("admin.leadership.index")}
-                            className="
-                                px-5
-                                py-2.5
-                                rounded-lg
-                                border
-                                border-gray-300
-                                text-sm
-                                font-medium
-                                text-gray-600
-                                hover:bg-gray-50
-                                transition
-                            "
-                        >
-                            Batal
-                        </Link>
+                    {/* Actions */}
+
+                    <div
+                        className="
+                            flex
+                            items-center
+                            justify-between
+                            pt-5
+                            border-t
+                            border-gray-100
+                        "
+                    >
+
+                        {/* Delete */}
+
                         <AlertDialog>
+
                             <AlertDialogTrigger asChild>
+
                                 <button
                                     type="button"
-                                    className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md transition"
+                                    className="
+                                        inline-flex
+                                        items-center
+                                        gap-2
+                                        px-5
+                                        py-3
+                                        rounded-xl
+                                        border
+                                        border-red-200
+                                        text-red-600
+                                        font-semibold
+                                        hover:bg-red-50
+                                        transition
+                                    "
                                 >
+                                    <Trash2 size={18} />
+
                                     Hapus Pemimpin
                                 </button>
+
                             </AlertDialogTrigger>
 
+
                             <AlertDialogContent>
+
                                 <AlertDialogHeader>
+
                                     <AlertDialogTitle>
                                         Hapus Pemimpin?
                                     </AlertDialogTitle>
 
                                     <AlertDialogDescription>
-                                        Pemimpin yang dihapus tidak dapat dikembalikan.
+                                        Data pemimpin yang dihapus tidak
+                                        dapat dikembalikan. Apakah Anda yakin
+                                        ingin menghapus data ini?
                                     </AlertDialogDescription>
+
                                 </AlertDialogHeader>
 
+
                                 <AlertDialogFooter>
+
                                     <AlertDialogCancel>
                                         Batal
                                     </AlertDialogCancel>
 
                                     <AlertDialogAction
                                         onClick={deleteLeader}
+                                        className="bg-red-600 hover:bg-red-700"
                                     >
                                         Hapus
                                     </AlertDialogAction>
+
                                 </AlertDialogFooter>
+
                             </AlertDialogContent>
+
                         </AlertDialog>
-                        <button
-                            type="submit"
-                            disabled={processing}
-                            className="
-                                px-5
-                                py-2.5
-                                rounded-lg
-                                bg-[#23478F]
-                                text-white
-                                text-sm
-                                font-medium
-                                hover:bg-[#18386B]
-                                disabled:opacity-50
-                                transition
-                            "
-                        >
-                            {processing
-                                ? "Menyimpan..."
-                                : "Simpan Perubahan"}
-                        </button>
+
+
+                        {/* Right Actions */}
+
+                        <div className="flex items-center gap-3">
+
+                            <Link
+                                href={route("admin.leadership.index")}
+                                className="
+                                    px-5
+                                    py-3
+                                    rounded-xl
+                                    border
+                                    border-gray-200
+                                    text-gray-600
+                                    font-medium
+                                    hover:bg-gray-50
+                                    transition
+                                "
+                            >
+                                Batal
+                            </Link>
+
+                            <button
+                                type="submit"
+                                disabled={processing}
+                                className="
+                                    px-6
+                                    py-3
+                                    rounded-xl
+                                    bg-[#23478F]
+                                    text-white
+                                    font-semibold
+                                    hover:bg-[#18386B]
+                                    disabled:opacity-50
+                                    disabled:cursor-not-allowed
+                                    transition
+                                "
+                            >
+                                {processing
+                                    ? "Menyimpan..."
+                                    : "Simpan Perubahan"}
+                            </button>
+
+                        </div>
+
                     </div>
+
                 </form>
+
             </div>
+
         </AdminLayout>
     );
 }

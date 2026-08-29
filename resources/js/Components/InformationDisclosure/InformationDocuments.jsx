@@ -135,7 +135,7 @@ export default function InformationDocuments({
                                                     mb-3
                                                 "
                                             >
-                                                {t("information:documents.pdf")}
+                                                {doc.category}
                                             </span>
 
                                             <h3

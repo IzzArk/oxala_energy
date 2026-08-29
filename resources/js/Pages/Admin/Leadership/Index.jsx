@@ -3,13 +3,6 @@ import { Head, Link, router } from "@inertiajs/react";
 import { Edit, Plus, Trash2, UserRound } from "lucide-react";
 
 export default function Index({ leaders }) {
-    const handleDelete = (id) => {
-        if (!confirm("Apakah Anda yakin ingin menghapus data ini?")) {
-            return;
-        }
-
-        router.delete(route("admin.leadership.destroy", id));
-    };
 
     return (
         <AdminLayout>
@@ -32,7 +25,7 @@ export default function Index({ leaders }) {
                         href="/admin/leadership/create"
                         className="bg-blue-600 text-white px-4 py-2 rounded-md"
                     >
-                        Tambah Banner
+                        Tambah Pemimpin
                     </Link>
                 </div>
 
@@ -51,6 +44,9 @@ export default function Index({ leaders }) {
                         <table className="w-full">
                             <thead className="bg-gray-50 border-b">
                                 <tr>
+                                    <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase">
+                                        No Urut
+                                    </th>
                                     <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase">
                                         Foto
                                     </th>
@@ -80,6 +76,11 @@ export default function Index({ leaders }) {
                                             key={leader.id}
                                             className="hover:bg-gray-50 transition"
                                         >
+                                            <td className="px-9 py-4">
+                                                <p className="font-semibold text-gray-800">
+                                                    {leader.sort_order}
+                                                </p>
+                                            </td>
                                             {/* Foto */}
                                             <td className="px-6 py-4">
                                                 <div

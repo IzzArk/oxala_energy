@@ -1,0 +1,102 @@
+import{u as c,j as r,H as x,L as l,r as u}from"./app-BXgzW7Ep.js";import{A as g}from"./AdminLayout-C8SIRuoj.js";import{A as p,a as h,T as b,b as j,c as f,d as v,e as y,f as A,g as N,h as C}from"./alert-dialog-Cqo_UZZs.js";import{A as D}from"./arrow-left-rxRUG-6D.js";import{S as k}from"./save-Byi6l_Dv.js";/* empty css            */import"./LOGO-OXALA-C9CdK5i9.js";import"./newspaper-B1Xn-V5C.js";import"./leaf-UrPvBh5_.js";import"./phone-Gx-E6y_Y.js";import"./file-text-BgOqdKqP.js";import"./user-BPMoL-Hq.js";function I({event:n}){const{data:t,setData:s,put:d,processing:i,errors:a}=c({title:n.title??"",event_date:n.event_date??""}),o=e=>{e.preventDefault(),d(`/admin/investor-calendar/${n.id}`)},m=()=>{u.delete(`/admin/investor-calendar/${n.id}`)};return r.jsxs(g,{children:[r.jsx(x,{title:"Edit Kalender Investor"}),r.jsxs("div",{className:"max-w-3xl",children:[r.jsxs("div",{className:"mb-8",children:[r.jsxs(l,{href:"/admin/investor-calendar",className:`\r
+                            inline-flex\r
+                            items-center\r
+                            gap-2\r
+                            text-gray-500\r
+                            hover:text-[#23478F]\r
+                            transition\r
+                        `,children:[r.jsx(D,{size:18}),"Kembali"]}),r.jsx("h1",{className:"text-2xl font-bold text-[#23478F] mt-4",children:"Edit Kalender Investor"}),r.jsx("p",{className:"text-gray-500 mt-1",children:"Perbarui informasi agenda pada kalender investor."})]}),r.jsxs("form",{onSubmit:o,className:`\r
+                        bg-white\r
+                        rounded-2xl\r
+                        border\r
+                        border-gray-100\r
+                        shadow-sm\r
+                        p-8\r
+                        space-y-6\r
+                    `,children:[r.jsxs("div",{children:[r.jsx("label",{htmlFor:"title",className:`\r
+                                block\r
+                                text-sm\r
+                                font-medium\r
+                                text-gray-700\r
+                                mb-2\r
+                            `,children:"Judul Agenda"}),r.jsx("input",{id:"title",type:"text",value:t.title,onChange:e=>s("title",e.target.value),placeholder:"Contoh: Rapat Umum Pemegang Saham",className:`\r
+                                w-full\r
+                                border\r
+                                border-gray-200\r
+                                rounded-xl\r
+                                px-4\r
+                                py-3\r
+                                focus:outline-none\r
+                                focus:ring-2\r
+                                focus:ring-[#B6C95C]\r
+                                focus:border-[#B6C95C]\r
+                                transition\r
+                            `}),a.title&&r.jsx("p",{className:"text-red-500 text-sm mt-1",children:a.title})]}),r.jsxs("div",{children:[r.jsx("label",{htmlFor:"event_date",className:`\r
+                                block\r
+                                text-sm\r
+                                font-medium\r
+                                text-gray-700\r
+                                mb-2\r
+                            `,children:"Tanggal Agenda"}),r.jsx("input",{id:"event_date",type:"date",value:t.event_date,onChange:e=>s("event_date",e.target.value),className:`\r
+                                w-full\r
+                                border\r
+                                border-gray-200\r
+                                rounded-xl\r
+                                px-4\r
+                                py-3\r
+                                focus:outline-none\r
+                                focus:ring-2\r
+                                focus:ring-[#B6C95C]\r
+                                focus:border-[#B6C95C]\r
+                                transition\r
+                            `}),a.event_date&&r.jsx("p",{className:"text-red-500 text-sm mt-1",children:a.event_date})]}),r.jsx("div",{className:`\r
+                            p-4\r
+                            rounded-xl\r
+                            bg-[#FAFCF3]\r
+                            border\r
+                            border-[#E8EDCF]\r
+                        `,children:r.jsx("p",{className:"text-sm text-gray-600",children:"Pastikan judul dan tanggal agenda sudah sesuai sebelum menyimpan perubahan."})}),r.jsxs("div",{className:`\r
+                            flex\r
+                            items-center\r
+                            justify-between\r
+                            pt-5\r
+                            border-t\r
+                            border-gray-100\r
+                        `,children:[r.jsxs(p,{children:[r.jsx(h,{asChild:!0,children:r.jsxs("button",{type:"button",className:`\r
+                                        inline-flex\r
+                                        items-center\r
+                                        gap-2\r
+                                        px-5\r
+                                        py-3\r
+                                        rounded-xl\r
+                                        border\r
+                                        border-red-200\r
+                                        text-red-600\r
+                                        font-semibold\r
+                                        hover:bg-red-50\r
+                                        transition\r
+                                    `,children:[r.jsx(b,{size:18}),"Hapus Agenda"]})}),r.jsxs(j,{children:[r.jsxs(f,{children:[r.jsx(v,{children:"Hapus Agenda?"}),r.jsx(y,{children:"Agenda yang dihapus tidak dapat dikembalikan. Apakah Anda yakin ingin menghapus agenda ini?"})]}),r.jsxs(A,{children:[r.jsx(N,{children:"Batal"}),r.jsx(C,{onClick:m,className:"bg-red-600 hover:bg-red-700",children:"Hapus"})]})]})]}),r.jsxs("div",{className:"flex items-center gap-3",children:[r.jsx(l,{href:"/admin/investor-calendar",className:`\r
+                                    px-5\r
+                                    py-3\r
+                                    rounded-xl\r
+                                    border\r
+                                    border-gray-200\r
+                                    text-gray-600\r
+                                    font-medium\r
+                                    hover:bg-gray-50\r
+                                    transition\r
+                                `,children:"Batal"}),r.jsxs("button",{type:"submit",disabled:i,className:`\r
+                                    inline-flex\r
+                                    items-center\r
+                                    gap-2\r
+                                    px-6\r
+                                    py-3\r
+                                    rounded-xl\r
+                                    bg-[#23478F]\r
+                                    text-white\r
+                                    font-semibold\r
+                                    hover:bg-[#18386B]\r
+                                    disabled:opacity-50\r
+                                    disabled:cursor-not-allowed\r
+                                    transition\r
+                                `,children:[r.jsx(k,{size:18}),i?"Menyimpan...":"Simpan Perubahan"]})]})]})]})]})]})}export{I as default};

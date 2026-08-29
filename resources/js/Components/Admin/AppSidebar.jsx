@@ -9,9 +9,11 @@ import {
     Crown,
     MessageCircle,
     Leaf,
+    User,
 } from "lucide-react";
 
 import { Link, usePage } from "@inertiajs/react";
+import Logo from "../../../Assets/LOGO-OXALA.png";
 
 export default function AppSidebar({ mobile = false }) {
 
@@ -81,6 +83,11 @@ export default function AppSidebar({ mobile = false }) {
             icon: Calendar,
             href: "/admin/investor-calendar",
         },
+        {
+            title: "Users",
+            icon: User,
+            href: "/admin/users",
+        },
     ];
 
     return (
@@ -90,11 +97,11 @@ export default function AppSidebar({ mobile = false }) {
             ${mobile ? "w-full h-full" : "w-64 min-h-screen border-r"}
         `}
         >
-            <div className="p-6">
+            <div className="p-2 pb-0">
                 <img
-                    src="https://iili.io/Cok65il.png"
+                    src={Logo}
                     alt="Oxala"
-                    className="h-15"
+                    className="h-22"
                 />
             </div>
 

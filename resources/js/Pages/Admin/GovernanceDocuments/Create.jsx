@@ -7,6 +7,7 @@ export default function Create() {
     const { data, setData, post, processing, errors } =
         useForm({
             title: "",
+            category: "",
             description: "",
             file: null,
             sort_order: 0,
@@ -70,6 +71,24 @@ export default function Create() {
                     </p>
 
                 </div>
+                <div>
+
+                    <label>Category</label>
+
+                    <input
+                        type="text"
+                        value={data.category}
+                        onChange={(e) =>
+                            setData("category", e.target.value)
+                        }
+                        className="w-full border rounded-lg p-3 mt-2"
+                    />
+
+                    <p className="text-red-500 text-sm">
+                        {errors.category}
+                    </p>
+
+                </div>
 
                 <div>
 
@@ -88,7 +107,9 @@ export default function Create() {
 
                 <div>
 
-                    <label>Upload PDF</label>
+                    <label className="block mb-2 font-medium">
+                        Upload Dokumen
+                    </label>
 
                     <label
                         className="

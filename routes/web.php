@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminContactController;
+use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GovernanceDocumentController;
@@ -151,4 +152,11 @@ Route::prefix('admin')
         );
     });
 
+Route::middleware(['auth'])
+    ->prefix('admin')
+    ->group(function () {
+
+        Route::resource('users', AdminUserController::class)
+            ->except(['show']);
+    });
 require __DIR__ . '/auth.php';

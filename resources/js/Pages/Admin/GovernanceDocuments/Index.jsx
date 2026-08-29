@@ -39,7 +39,7 @@ export default function Index({ documents }) {
                             <thead className="bg-gray-100">
 
                                 <tr>
-
+                                    <th className="p-4 text-left">No Urut</th>
                                     <th className="p-4 text-left">Judul</th>
 
                                     <th className="p-4 text-left">
@@ -66,7 +66,9 @@ export default function Index({ documents }) {
                                         key={doc.id}
                                         className="border-t"
                                     >
-
+                                        <td className="p-4">
+                                            {doc.sort_order}
+                                        </td>
                                         <td className="p-4">
                                             {doc.title}
                                         </td>

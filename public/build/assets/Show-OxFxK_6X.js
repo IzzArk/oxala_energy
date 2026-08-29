@@ -1,0 +1,125 @@
+import{j as r,H as i,L as s,r as l}from"./app-BXgzW7Ep.js";import{A as d}from"./AdminLayout-C8SIRuoj.js";import{A as m,a as c,T as x,b as o,c as g,d as h,e as j,f as b,g as p,h as f}from"./alert-dialog-Cqo_UZZs.js";import{A as N}from"./arrow-left-rxRUG-6D.js";import{U as u}from"./user-BPMoL-Hq.js";import{M as y}from"./mail-DDACpKFX.js";import{c as v}from"./LOGO-OXALA-C9CdK5i9.js";import{C as A}from"./calendar-days-GQuOdFpS.js";/* empty css            */import"./newspaper-B1Xn-V5C.js";import"./leaf-UrPvBh5_.js";import"./phone-Gx-E6y_Y.js";import"./file-text-BgOqdKqP.js";const w=[["path",{d:"M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z",key:"18887p"}]],n=v("message-square",w);function S({contact:e}){const a=()=>{l.delete(`/admin/contacts/${e.id}`)},t=new Date(e.created_at).toLocaleString("id-ID",{day:"2-digit",month:"long",year:"numeric",hour:"2-digit",minute:"2-digit"});return r.jsxs(d,{children:[r.jsx(i,{title:"Detail Pesan"}),r.jsxs("div",{className:"max-w-4xl",children:[r.jsxs("div",{className:"mb-8",children:[r.jsxs(s,{href:"/admin/contacts/general",className:`\r
+                            inline-flex\r
+                            items-center\r
+                            gap-2\r
+                            text-gray-500\r
+                            hover:text-[#23478F]\r
+                            transition\r
+                        `,children:[r.jsx(N,{size:18}),"Kembali"]}),r.jsx("h1",{className:"text-2xl font-bold text-[#23478F] mt-4",children:"Detail Pesan"}),r.jsx("p",{className:"text-gray-500 mt-1",children:"Informasi pesan yang dikirim melalui website."})]}),r.jsxs("div",{className:`\r
+                        bg-white\r
+                        rounded-2xl\r
+                        border\r
+                        border-gray-100\r
+                        shadow-sm\r
+                        overflow-hidden\r
+                    `,children:[r.jsx("div",{className:"h-1 bg-[#B6C95C]"}),r.jsxs("div",{className:"p-8",children:[r.jsxs("div",{className:"mb-8",children:[r.jsx("h2",{className:"text-base font-semibold text-gray-800 mb-5",children:"Informasi Pengirim"}),r.jsxs("div",{className:"grid md:grid-cols-2 gap-5",children:[r.jsxs("div",{className:`\r
+                                        flex\r
+                                        items-start\r
+                                        gap-4\r
+                                        p-4\r
+                                        rounded-xl\r
+                                        bg-gray-50\r
+                                        border\r
+                                        border-gray-100\r
+                                    `,children:[r.jsx("div",{className:`\r
+                                            w-10\r
+                                            h-10\r
+                                            rounded-lg\r
+                                            bg-[#EEF2FA]\r
+                                            flex\r
+                                            items-center\r
+                                            justify-center\r
+                                            shrink-0\r
+                                        `,children:r.jsx(u,{size:19,className:"text-[#23478F]"})}),r.jsxs("div",{className:"min-w-0",children:[r.jsx("p",{className:"text-xs text-gray-500 mb-1",children:"Nama"}),r.jsx("p",{className:"text-sm font-semibold text-gray-800 break-words",children:e.name})]})]}),r.jsxs("div",{className:`\r
+                                        flex\r
+                                        items-start\r
+                                        gap-4\r
+                                        p-4\r
+                                        rounded-xl\r
+                                        bg-gray-50\r
+                                        border\r
+                                        border-gray-100\r
+                                    `,children:[r.jsx("div",{className:`\r
+                                            w-10\r
+                                            h-10\r
+                                            rounded-lg\r
+                                            bg-[#EEF2FA]\r
+                                            flex\r
+                                            items-center\r
+                                            justify-center\r
+                                            shrink-0\r
+                                        `,children:r.jsx(y,{size:19,className:"text-[#23478F]"})}),r.jsxs("div",{className:"min-w-0",children:[r.jsx("p",{className:"text-xs text-gray-500 mb-1",children:"Email"}),r.jsx("p",{className:"text-sm font-semibold text-gray-800 break-words",children:e.email})]})]})]})]}),r.jsx("div",{className:`\r
+                                border-t\r
+                                border-gray-100\r
+                                pt-6\r
+                            `,children:r.jsxs("div",{className:"flex items-start gap-4",children:[r.jsx("div",{className:`\r
+                                        w-10\r
+                                        h-10\r
+                                        rounded-lg\r
+                                        bg-[#EEF2FA]\r
+                                        flex\r
+                                        items-center\r
+                                        justify-center\r
+                                        shrink-0\r
+                                    `,children:r.jsx(n,{size:19,className:"text-[#23478F]"})}),r.jsxs("div",{className:"min-w-0",children:[r.jsx("p",{className:"text-xs text-gray-500 mb-1",children:"Subjek"}),r.jsx("p",{className:"text-base font-semibold text-gray-800 break-words",children:e.subject})]})]})}),r.jsxs("div",{className:`\r
+                                mt-6\r
+                                flex\r
+                                items-start\r
+                                gap-4\r
+                            `,children:[r.jsx("div",{className:`\r
+                                    w-10\r
+                                    h-10\r
+                                    rounded-lg\r
+                                    bg-[#FAFCF3]\r
+                                    flex\r
+                                    items-center\r
+                                    justify-center\r
+                                    shrink-0\r
+                                `,children:r.jsx(A,{size:19,className:"text-[#7A9433]"})}),r.jsxs("div",{children:[r.jsx("p",{className:"text-xs text-gray-500 mb-1",children:"Tanggal Dikirim"}),r.jsx("p",{className:"text-sm font-medium text-gray-700",children:t})]})]}),r.jsxs("div",{className:`\r
+                                mt-8\r
+                                border-t\r
+                                border-gray-100\r
+                                pt-6\r
+                            `,children:[r.jsxs("div",{className:"flex items-center gap-2 mb-3",children:[r.jsx(n,{size:18,className:"text-[#23478F]"}),r.jsx("h2",{className:"text-base font-semibold text-gray-800",children:"Isi Pesan"})]}),r.jsx("div",{className:`\r
+                                    rounded-xl\r
+                                    border\r
+                                    border-gray-200\r
+                                    bg-gray-50\r
+                                    p-5\r
+                                    text-sm\r
+                                    text-gray-700\r
+                                    leading-relaxed\r
+                                    whitespace-pre-wrap\r
+                                    break-words\r
+                                `,children:e.message})]}),r.jsxs("div",{className:`\r
+                                flex\r
+                                items-center\r
+                                justify-between\r
+                                pt-6\r
+                                mt-6\r
+                                border-t\r
+                                border-gray-100\r
+                            `,children:[r.jsxs(m,{children:[r.jsx(c,{asChild:!0,children:r.jsxs("button",{type:"button",className:`\r
+                                            inline-flex\r
+                                            items-center\r
+                                            gap-2\r
+                                            px-5\r
+                                            py-3\r
+                                            rounded-xl\r
+                                            border\r
+                                            border-red-200\r
+                                            text-red-600\r
+                                            font-semibold\r
+                                            hover:bg-red-50\r
+                                            transition\r
+                                        `,children:[r.jsx(x,{size:18}),"Hapus Pesan"]})}),r.jsxs(o,{children:[r.jsxs(g,{children:[r.jsx(h,{children:"Hapus Pesan?"}),r.jsx(j,{children:"Pesan yang dihapus tidak dapat dikembalikan. Apakah Anda yakin ingin menghapus pesan ini?"})]}),r.jsxs(b,{children:[r.jsx(p,{children:"Batal"}),r.jsx(f,{onClick:a,className:"bg-red-600 hover:bg-red-700",children:"Hapus"})]})]})]}),r.jsx(s,{href:"/admin/contacts",className:`\r
+                                    px-5\r
+                                    py-3\r
+                                    rounded-xl\r
+                                    border\r
+                                    border-gray-200\r
+                                    text-gray-600\r
+                                    font-medium\r
+                                    hover:bg-gray-50\r
+                                    transition\r
+                                `,children:"Kembali ke Pesan"})]})]})]})]})]})}export{S as default};

@@ -8,6 +8,7 @@ import LeadershipSection from "@/Components/About/LeadershipSection";
 import AboutCTA from "@/Components/About/AboutCTA";
 import VisionMissionSection from "@/Components/About/VisionMision";
 import { Head } from "@inertiajs/react";
+import OrganizationStructure from "@/Components/About/OrganizationStructure";
 
 
 export default function About({ leaders }) {
@@ -29,6 +30,7 @@ export default function About({ leaders }) {
             <section id="direksi-komisaris">
                 <LeadershipSection leaders={leaders} />
             </section>
+            <OrganizationStructure />
             <section id="kontak">
                 <AboutCTA />
             </section>

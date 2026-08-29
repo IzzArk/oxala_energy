@@ -1,0 +1,134 @@
+import{u as c,j as e,r as m}from"./app-BXgzW7Ep.js";import{A as x}from"./AdminLayout-C8SIRuoj.js";import{A as u,a as b,T as g,b as p,c as h,d as f,e as j,f as y,g as N,h as v}from"./alert-dialog-Cqo_UZZs.js";import{A as C}from"./arrow-left-rxRUG-6D.js";import{U as k}from"./upload-CMIuwGwP.js";/* empty css            */import"./LOGO-OXALA-C9CdK5i9.js";import"./newspaper-B1Xn-V5C.js";import"./leaf-UrPvBh5_.js";import"./phone-Gx-E6y_Y.js";import"./file-text-BgOqdKqP.js";import"./user-BPMoL-Hq.js";function G({banner:t}){const{data:s,setData:a,post:l,processing:i,errors:n}=c({_method:"PUT",title:t.title||"",subtitle:t.subtitle||"",description:t.description||"",button_text:t.button_text||"",button_link:t.button_link||"",is_active:!!t.is_active,image:null}),o=r=>{r.preventDefault(),l(`/admin/banner/${t.id}`)},d=()=>{m.delete(`/admin/banner/${t.id}`)};return e.jsx(x,{children:e.jsxs("div",{className:"max-w-3xl",children:[e.jsxs("div",{className:"mb-8",children:[e.jsxs("a",{href:"/admin/banner",className:`\r
+                            inline-flex\r
+                            items-center\r
+                            gap-2\r
+                            text-gray-500\r
+                            hover:text-[#23478F]\r
+                            transition\r
+                        `,children:[e.jsx(C,{size:18}),"Kembali"]}),e.jsx("h1",{className:"text-2xl font-bold text-[#23478F] mt-4",children:"Edit Banner"}),e.jsx("p",{className:"text-gray-500 mt-1",children:"Perbarui informasi banner yang ditampilkan pada halaman website."})]}),e.jsxs("form",{onSubmit:o,className:`\r
+                        bg-white\r
+                        rounded-2xl\r
+                        border\r
+                        border-gray-100\r
+                        shadow-sm\r
+                        p-8\r
+                        space-y-6\r
+                    `,children:[e.jsxs("div",{children:[e.jsx("label",{className:"block text-sm font-medium text-gray-700 mb-2",children:"Judul Banner"}),e.jsx("input",{type:"text",value:s.title,onChange:r=>a("title",r.target.value),className:`\r
+                                w-full\r
+                                border\r
+                                border-gray-200\r
+                                rounded-xl\r
+                                px-4\r
+                                py-3\r
+                                focus:outline-none\r
+                                focus:ring-2\r
+                                focus:ring-[#B6C95C]\r
+                                focus:border-[#B6C95C]\r
+                                transition\r
+                            `}),n.title&&e.jsx("p",{className:"text-red-500 text-sm mt-1",children:n.title})]}),e.jsxs("div",{children:[e.jsx("label",{className:"block text-sm font-medium text-gray-700 mb-2",children:"Sub Judul"}),e.jsx("input",{type:"text",value:s.subtitle,onChange:r=>a("subtitle",r.target.value),className:`\r
+                                w-full\r
+                                border\r
+                                border-gray-200\r
+                                rounded-xl\r
+                                px-4\r
+                                py-3\r
+                                focus:outline-none\r
+                                focus:ring-2\r
+                                focus:ring-[#B6C95C]\r
+                                focus:border-[#B6C95C]\r
+                                transition\r
+                            `}),n.subtitle&&e.jsx("p",{className:"text-red-500 text-sm mt-1",children:n.subtitle})]}),e.jsxs("div",{children:[e.jsx("label",{className:"block text-sm font-medium text-gray-700 mb-2",children:"Deskripsi"}),e.jsx("textarea",{rows:5,value:s.description,onChange:r=>a("description",r.target.value),className:`\r
+                                w-full\r
+                                border\r
+                                border-gray-200\r
+                                rounded-xl\r
+                                px-4\r
+                                py-3\r
+                                resize-none\r
+                                focus:outline-none\r
+                                focus:ring-2\r
+                                focus:ring-[#B6C95C]\r
+                                focus:border-[#B6C95C]\r
+                                transition\r
+                            `}),n.description&&e.jsx("p",{className:"text-red-500 text-sm mt-1",children:n.description})]}),e.jsxs("div",{children:[e.jsx("label",{className:"block text-sm font-medium text-gray-700 mb-2",children:"Button Text"}),e.jsx("input",{type:"text",value:s.button_text,onChange:r=>a("button_text",r.target.value),className:`\r
+                                w-full\r
+                                border\r
+                                border-gray-200\r
+                                rounded-xl\r
+                                px-4\r
+                                py-3\r
+                                focus:outline-none\r
+                                focus:ring-2\r
+                                focus:ring-[#B6C95C]\r
+                                focus:border-[#B6C95C]\r
+                                transition\r
+                            `}),n.button_text&&e.jsx("p",{className:"text-red-500 text-sm mt-1",children:n.button_text})]}),e.jsxs("div",{children:[e.jsx("label",{className:"block text-sm font-medium text-gray-700 mb-2",children:"Button Link"}),e.jsx("input",{type:"text",value:s.button_link,onChange:r=>a("button_link",r.target.value),className:`\r
+                                w-full\r
+                                border\r
+                                border-gray-200\r
+                                rounded-xl\r
+                                px-4\r
+                                py-3\r
+                                focus:outline-none\r
+                                focus:ring-2\r
+                                focus:ring-[#B6C95C]\r
+                                focus:border-[#B6C95C]\r
+                                transition\r
+                            `}),n.button_link&&e.jsx("p",{className:"text-red-500 text-sm mt-1",children:n.button_link})]}),e.jsxs("div",{children:[t.image&&e.jsxs("div",{className:"mb-4",children:[e.jsx("p",{className:"text-sm text-gray-500 mb-2",children:"Foto saat ini"}),e.jsx("div",{className:"relative w-full overflow-hidden rounded-xl border border-gray-200",children:e.jsx("img",{src:`/storage/${t.image}`,alt:t.title,className:`\r
+                                            w-full\r
+                                            h-56\r
+                                            object-cover\r
+                                        `})})]}),e.jsxs("label",{className:`\r
+                                flex\r
+                                flex-col\r
+                                items-center\r
+                                justify-center\r
+                                w-full\r
+                                h-56\r
+                                border-2\r
+                                border-dashed\r
+                                border-gray-200\r
+                                rounded-xl\r
+                                cursor-pointer\r
+                                hover:border-[#B6C95C]\r
+                                hover:bg-[#FAFCF3]\r
+                                transition\r
+                            `,children:[e.jsx(k,{size:32,className:"text-gray-400 mb-3"}),e.jsx("span",{className:"text-sm text-gray-600",children:"Klik untuk mengganti foto banner"}),e.jsx("span",{className:"text-xs text-gray-400 mt-1",children:"JPG, PNG, WEBP · Maks. 5MB"}),e.jsx("span",{className:"text-xs text-[#7A9433] font-medium mt-1",children:"Gunakan gambar dengan kualitas terbaik"}),e.jsx("input",{type:"file",accept:"image/jpeg,image/png,image/webp",className:"hidden",onChange:r=>a("image",r.target.files[0])})]}),s.image&&e.jsxs("p",{className:"text-sm text-gray-500 mt-2",children:["File baru:"," ",e.jsx("span",{className:"font-medium",children:s.image.name})]}),n.image&&e.jsx("p",{className:"text-red-500 text-sm mt-1",children:n.image})]}),e.jsxs("div",{children:[e.jsx("label",{className:"block text-sm font-medium text-gray-700 mb-2",children:"Status Banner"}),e.jsxs("label",{className:`\r
+                                flex\r
+                                items-center\r
+                                gap-3\r
+                                w-fit\r
+                                cursor-pointer\r
+                                select-none\r
+                            `,children:[e.jsx("input",{type:"checkbox",checked:s.is_active,onChange:r=>a("is_active",r.target.checked),className:`\r
+                                    w-4\r
+                                    h-4\r
+                                    rounded\r
+                                    border-gray-300\r
+                                    text-[#23478F]\r
+                                    focus:ring-[#B6C95C]\r
+                                `}),e.jsx("span",{className:"text-sm text-gray-700",children:"Aktifkan banner"})]})]}),e.jsxs("div",{className:"flex items-center justify-between pt-4",children:[e.jsxs(u,{children:[e.jsx(b,{asChild:!0,children:e.jsxs("button",{type:"button",className:`\r
+                                        inline-flex\r
+                                        items-center\r
+                                        gap-2\r
+                                        px-5\r
+                                        py-3\r
+                                        rounded-xl\r
+                                        border\r
+                                        border-red-200\r
+                                        text-red-600\r
+                                        font-semibold\r
+                                        hover:bg-red-50\r
+                                        transition\r
+                                    `,children:[e.jsx(g,{size:18}),"Hapus Banner"]})}),e.jsxs(p,{children:[e.jsxs(h,{children:[e.jsx(f,{children:"Hapus Banner?"}),e.jsx(j,{children:"Banner yang dihapus tidak dapat dikembalikan. Apakah Anda yakin ingin menghapus banner ini?"})]}),e.jsxs(y,{children:[e.jsx(N,{children:"Batal"}),e.jsx(v,{onClick:d,className:"bg-red-600 hover:bg-red-700",children:"Hapus"})]})]})]}),e.jsx("button",{type:"submit",disabled:i,className:`\r
+                                px-6\r
+                                py-3\r
+                                rounded-xl\r
+                                bg-[#23478F]\r
+                                text-white\r
+                                font-semibold\r
+                                hover:bg-[#18386B]\r
+                                disabled:opacity-50\r
+                                disabled:cursor-not-allowed\r
+                                transition\r
+                            `,children:i?"Menyimpan...":"Update Banner"})]})]})]})})}export{G as default};

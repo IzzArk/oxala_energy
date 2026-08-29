@@ -8,6 +8,7 @@ class GovernanceDocument extends Model
 {
     protected $fillable = [
         'title',
+        'category',
         'description',
         'file',
         'sort_order',
