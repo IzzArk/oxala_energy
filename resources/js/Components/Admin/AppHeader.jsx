@@ -7,19 +7,19 @@ import {
     Sheet,
     SheetContent,
     SheetTrigger,
-} from "@/components/ui/sheet";
+} from "@/Components/ui/sheet";
 
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/Components/ui/dropdown-menu";
 
 import {
     Avatar,
     AvatarFallback,
-} from "@/components/ui/avatar";
+} from "@/Components/ui/avatar";
 
 export default function AppHeader() {
     return (
