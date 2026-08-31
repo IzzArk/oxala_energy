@@ -30,7 +30,7 @@ export default function About({ leaders }) {
             <section id="direksi-komisaris">
                 <LeadershipSection leaders={leaders} />
             </section>
-            <OrganizationStructure />
+            {/* <OrganizationStructure /> */}
             <section id="kontak">
                 <AboutCTA />
             </section>

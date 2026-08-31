@@ -21,7 +21,63 @@ jobs:
         uses: actions/checkout@v4
 
       # ==================================================
-      # 2. Install SSH key
+      # 2. Setup PHP
+      # ==================================================
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          extensions: mbstring, bcmath, pdo_mysql
+          tools: composer
+          coverage: none
+
+      # ==================================================
+      # 3. Setup Node.js
+      # ==================================================
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      # ==================================================
+      # 4. Install NPM dependencies
+      # ==================================================
+      - name: Install NPM dependencies
+        run: npm ci
+
+      # ==================================================
+      # 5. Build frontend
+      # ==================================================
+      - name: Build frontend
+        run: npm run build
+
+      # ==================================================
+      # 6. Verify build
+      # ==================================================
+      - name: Verify frontend build
+        shell: bash
+        run: |
+          set -e
+
+          if [ ! -d "public/build" ]; then
+            echo "❌ public/build tidak ditemukan!"
+            exit 1
+          fi
+
+          if [ ! -f "public/build/manifest.json" ]; then
+            echo "❌ public/build/manifest.json tidak ditemukan!"
+            exit 1
+          fi
+
+          echo "✅ Frontend build berhasil"
+          echo ""
+          echo "📁 Build contents:"
+          du -sh public/build
+          find public/build -maxdepth 2 -type f | head -30
+
+      # ==================================================
+      # 7. Install SSH key
       # ==================================================
       - name: Install SSH key
         shell: bash
@@ -40,7 +96,7 @@ jobs:
             >> ~/.ssh/known_hosts
 
       # ==================================================
-      # 3. Test SSH
+      # 8. Test SSH connection
       # ==================================================
       - name: Test SSH connection
         shell: bash
@@ -54,9 +110,9 @@ jobs:
             "echo 'SSH connection successful'"
 
       # ==================================================
-      # 4. Deploy
+      # 9. Deploy source code
       # ==================================================
-      - name: Deploy to Hostinger
+      - name: Deploy source code to Hostinger
         uses: appleboy/ssh-action@v1.2.2
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -75,7 +131,7 @@ jobs:
             # VARIABLES
             # ==================================================
 
-            APP_DIR="$HOME/domains/${{ secrets.WEBSITE_FOLDER }}"
+            APP_DIR="$HOME/domains/oxalaenergy.com"
 
             echo ""
             echo "📁 Application directory:"
@@ -125,16 +181,11 @@ jobs:
             fi
 
             # ==================================================
-            # PROTECT IMPORTANT DIRECTORIES
+            # PROTECT PRODUCTION FILES
             # ==================================================
 
             echo ""
-            echo "🔒 Checking important directories..."
-
-            if [ ! -d "storage" ]; then
-                echo "❌ storage directory does not exist!"
-                exit 1
-            fi
+            echo "🔒 Checking production files..."
 
             if [ ! -f ".env" ]; then
                 echo "❌ .env does not exist!"
@@ -142,8 +193,13 @@ jobs:
                 exit 1
             fi
 
+            if [ ! -d "storage" ]; then
+                echo "❌ storage directory does not exist!"
+                exit 1
+            fi
+
             # ==================================================
-            # BACKUP CURRENT COMMIT
+            # SAVE CURRENT COMMIT
             # ==================================================
 
             CURRENT_COMMIT=$(git rev-parse HEAD)
@@ -175,11 +231,10 @@ jobs:
             echo "🔄 Updating source code..."
 
             git checkout main
-
             git reset --hard origin/main
 
             # ==================================================
-            # VERIFY IMPORTANT FILES AFTER UPDATE
+            # VERIFY SOURCE CODE
             # ==================================================
 
             echo ""
@@ -233,10 +288,21 @@ jobs:
             echo ""
             echo "🔗 Checking storage link..."
 
-            if [ ! -L "public/storage" ]; then
-                php artisan storage:link
+            if [ -L "public/storage" ]; then
+
+                echo "✅ Storage symlink already exists"
+
+            elif [ -e "public/storage" ]; then
+
+                echo "❌ public/storage exists but is NOT a symlink!"
+                echo "Deployment stopped to protect uploaded files."
+
+                exit 1
+
             else
-                echo "✅ Storage link already exists"
+
+                php artisan storage:link
+
             fi
 
             # ==================================================
@@ -279,18 +345,24 @@ jobs:
                         echo "$BACKUP_FILE"
 
                     else
+
                         echo "⚠️ Database credentials incomplete."
                         echo "⚠️ Skipping database backup."
+
                     fi
 
                 else
+
                     echo "ℹ️ Database is not MySQL."
                     echo "ℹ️ Skipping mysqldump."
+
                 fi
 
             else
+
                 echo "⚠️ mysqldump not available."
                 echo "⚠️ Skipping database backup."
+
             fi
 
             # ==================================================
@@ -347,48 +419,132 @@ jobs:
 
             php artisan queue:restart || true
 
-            # ==================================================
-            # FINAL CHECK
-            # ==================================================
-
             echo ""
-            echo "🔎 Final deployment check..."
+            echo "✅ Source deployment completed"
 
+      # ==================================================
+      # 10. Upload Vite build
+      # ==================================================
+      - name: Upload frontend build
+        shell: bash
+        run: |
+          set -e
+
+          echo "=========================================="
+          echo "📦 Uploading frontend build"
+          echo "=========================================="
+
+          rsync \
+            -az \
+            --delete \
+            -e "ssh -p ${{ secrets.SSH_PORT }} -i ~/.ssh/id_rsa" \
+            public/build/ \
+            "${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/home/u388571771/domains/oxalaenergy.com/public/build/"
+
+          echo ""
+          echo "✅ Frontend build uploaded successfully"
+
+      # ==================================================
+      # 11. Final verification
+      # ==================================================
+      - name: Final deployment verification
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_KEY }}
+
+          script: |
+            set -e
+
+            APP_DIR="$HOME/domains/oxalaenergy.com"
+
+            cd "$APP_DIR"
+
+            echo "=========================================="
+            echo "🔎 Final deployment check"
+            echo "=========================================="
+
+            # Laravel
+            if [ ! -f "artisan" ]; then
+                echo "❌ artisan missing!"
+                exit 1
+            fi
+
+            # Environment
             if [ ! -f ".env" ]; then
                 echo "❌ .env missing!"
                 exit 1
             fi
 
-            if [ ! -d "storage" ]; then
-                echo "❌ storage missing!"
-                exit 1
-            fi
-
+            # Public
             if [ ! -f "public/index.php" ]; then
                 echo "❌ public/index.php missing!"
                 exit 1
             fi
 
-            # ==================================================
-            # DEPLOYMENT SUCCESS
-            # ==================================================
+            # Build
+            if [ ! -f "public/build/manifest.json" ]; then
+                echo "❌ Vite manifest missing!"
+                exit 1
+            fi
+
+            # Storage
+            if [ ! -L "public/storage" ]; then
+                echo "❌ public/storage is not a symlink!"
+                exit 1
+            fi
+
+            # Storage target
+            STORAGE_TARGET=$(readlink -f public/storage)
+
+            EXPECTED_STORAGE="$APP_DIR/storage/app/public"
+
+            if [ "$STORAGE_TARGET" != "$EXPECTED_STORAGE" ]; then
+                echo "❌ Storage symlink points to wrong location!"
+                echo "Expected:"
+                echo "$EXPECTED_STORAGE"
+                echo "Actual:"
+                echo "$STORAGE_TARGET"
+                exit 1
+            fi
+
+            # Public HTML
+            if [ ! -L "public_html" ]; then
+                echo "⚠️ public_html is not a symlink."
+            else
+                PUBLIC_HTML_TARGET=$(readlink -f public_html)
+
+                if [ "$PUBLIC_HTML_TARGET" != "$APP_DIR/public" ]; then
+                    echo "❌ public_html points to wrong location!"
+                    echo "Expected:"
+                    echo "$APP_DIR/public"
+                    echo "Actual:"
+                    echo "$PUBLIC_HTML_TARGET"
+                    exit 1
+                fi
+
+                echo "✅ public_html -> public"
+            fi
+
+            echo ""
+            echo "📁 Build size:"
+            du -sh public/build
+
+            echo ""
+            echo "📁 Storage size:"
+            du -sh storage
+
+            echo ""
+            echo "📁 Public size:"
+            du -sh public
+
+            echo ""
+            echo "📌 Current commit:"
+            git rev-parse --short HEAD
 
             echo ""
             echo "=========================================="
-            echo "✅ Deployment completed successfully!"
+            echo "🎉 DEPLOYMENT SUCCESSFUL"
             echo "=========================================="
-
-            echo ""
-            echo "📊 Deployment information:"
-            echo "Commit: $(git rev-parse --short HEAD)"
-            echo "Date: $(date)"
-            echo "Directory: $(pwd)"
-
-            echo ""
-            echo "📁 Important directories:"
-            echo "Storage: $(du -sh storage 2>/dev/null | cut -f1)"
-            echo "Public:  $(du -sh public 2>/dev/null | cut -f1)"
-            echo "Vendor:  $(du -sh vendor 2>/dev/null | cut -f1)"
-
-            echo ""
-            echo "🎉 Done!"
