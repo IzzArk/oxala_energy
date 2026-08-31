@@ -72,9 +72,14 @@ jobs:
 
           echo "✅ Frontend build berhasil"
           echo ""
-          echo "📁 Build contents:"
+
+          echo "📁 Build size:"
           du -sh public/build
-          find public/build -maxdepth 2 -type f | head -30
+
+          echo ""
+
+          echo "📁 Sample build files:"
+          find public/build -maxdepth 2 -type f -print | sed -n '1,30p'
 
       # ==================================================
       # 7. Install SSH key
