@@ -1,8 +1,11 @@
+import { usePage } from "@inertiajs/react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
+
 export default function InvestorContact() {
     const { t } = useTranslation("investor");
+    const { settings } = usePage().props;
     return (
         <motion.section
             initial={{
@@ -43,9 +46,9 @@ export default function InvestorContact() {
 
                     <div className="mt-8 space-y-2">
 
-                        <p>investor@oxala.co.id</p>
+                        <p>{settings.email}</p>
 
-                        <p>+62 21 5555 1234</p>
+                        <p>{settings.phone}</p>
 
                     </div>
 

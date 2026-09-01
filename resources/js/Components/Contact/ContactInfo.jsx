@@ -1,3 +1,4 @@
+import { usePage } from "@inertiajs/react";
 import { motion } from "framer-motion";
 import {
     MapPin,
@@ -9,6 +10,7 @@ import { useTranslation } from "react-i18next";
 
 export default function ContactInfo() {
     const { t } = useTranslation("contact");
+    const { settings } = usePage().props;
     const contacts = [
         {
             icon: MapPin,
@@ -18,12 +20,12 @@ export default function ContactInfo() {
         {
             icon: Phone,
             title: t("contact:info.items.phone.title"),
-            value: t("contact:info.items.phone.value"),
+            value: settings.phone,
         },
         {
             icon: Mail,
             title: t("contact:info.items.email.title"),
-            value: t("contact:info.items.email.value"),
+            value: settings.email,
         },
         {
             icon: Clock,

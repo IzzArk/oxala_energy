@@ -1,33 +1,59 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import {
+    ArrowRight,
+    ChevronLeft,
+    ChevronRight,
+} from "lucide-react";
 import { useTranslation } from "react-i18next";
+
 
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { useState } from "react";
 
 export default function Hero({ banners }) {
     const { t } = useTranslation("home");
+    const [activeBanner, setActiveBanner] = useState(banners?.[0] ?? null);
+
     return (
         <>
             <section
                 className="
-                relative
-                h-[100svh]
-                min-h-[500px]
-                lg:min-h-[850px]
-                overflow-hidden
-            "
+                    relative
+                    h-[100svh]
+                    min-h-[500px]
+                    lg:min-h-[850px]
+                    overflow-hidden
+                "
             >
+                {/* =========================
+                    BANNER SLIDER
+                ========================== */}
+
                 <Swiper
-                    modules={[Autoplay, Pagination]}
+                    modules={[
+                        Autoplay,
+                        Pagination,
+                        Navigation,
+                    ]}
+                    onSlideChange={(swiper) => {
+                        setActiveBanner(
+                            banners[swiper.realIndex]
+                        );
+                    }}
                     autoplay={{
                         delay: 5000,
                         disableOnInteraction: false,
                     }}
                     pagination={{
                         clickable: true,
+                    }}
+                    navigation={{
+                        prevEl: ".hero-prev",
+                        nextEl: ".hero-next",
                     }}
                     loop
                     className="absolute inset-0 h-full w-full"
@@ -37,16 +63,36 @@ export default function Hero({ banners }) {
                             <img
                                 src={`/storage/${banner.image}`}
                                 alt={banner.title}
-                                className="w-full h-full object-cover"
+                                className="
+                                    w-full
+                                    h-full
+                                    object-cover
+                                "
                             />
                         </SwiperSlide>
                     ))}
                 </Swiper>
 
-                <div className="absolute inset-0 bg-black/60 z-10" />
+                {/* =========================
+                    DARK OVERLAY
+                ========================== */}
 
+                <div
+                    className="
+                        absolute
+                        inset-0
+                        bg-black/60
+                        z-10
+                    "
+                />
+
+
+                {/* =========================
+                    HERO CONTENT
+                ========================== */}
 
                 <div className="absolute inset-0 z-20">
+
                     <div
                         className="
                             max-w-7xl
@@ -57,6 +103,7 @@ export default function Hero({ banners }) {
                             items-center
                         "
                     >
+
                         <motion.div
                             initial={{
                                 opacity: 0,
@@ -77,6 +124,9 @@ export default function Hero({ banners }) {
                                 lg:pb-40
                             "
                         >
+
+                            {/* Badge */}
+
                             <span
                                 className="
                                     inline-flex
@@ -99,6 +149,9 @@ export default function Hero({ banners }) {
                                 {t("home:hero.badge")}
                             </span>
 
+
+                            {/* Title */}
+
                             <h1
                                 className="
                                     mt-6
@@ -111,6 +164,7 @@ export default function Hero({ banners }) {
                                 "
                             >
                                 {t("home:hero.title1")}
+
                                 <br />
 
                                 {t("home:hero.title2")}
@@ -119,6 +173,9 @@ export default function Hero({ banners }) {
                                     {t("home:hero.titleHighlight")}
                                 </span>
                             </h1>
+
+
+                            {/* Description */}
 
                             <p
                                 className="
@@ -134,6 +191,9 @@ export default function Hero({ banners }) {
                                 {t("home:hero.description")}
                             </p>
 
+
+                            {/* Buttons */}
+
                             <div
                                 className="
                                     mt-8
@@ -143,6 +203,9 @@ export default function Hero({ banners }) {
                                     gap-4
                                 "
                             >
+
+                                {/* Product */}
+
                                 <a
                                     href="/produk"
                                     className="
@@ -161,8 +224,12 @@ export default function Hero({ banners }) {
                                     "
                                 >
                                     {t("home:hero.productButton")}
+
                                     <ArrowRight size={18} />
                                 </a>
+
+
+                                {/* Contact */}
 
                                 <a
                                     href="/hubungi-kami"
@@ -186,11 +253,145 @@ export default function Hero({ banners }) {
                                 >
                                     {t("home:hero.investorButton")}
                                 </a>
+
+                                {activeBanner?.button_text && activeBanner?.button_link && (
+                                    <a
+                                        href={activeBanner.button_link}
+                                        className="
+            inline-flex
+            items-center
+            justify-center
+            gap-3
+            rounded-xl
+            bg-[#B6C95C]
+            px-8
+            py-4
+            font-semibold
+            text-white
+            hover:bg-[#9CB548]
+            transition
+        "
+                                    >
+                                        {activeBanner.button_text}
+
+                                        <ArrowRight size={18} />
+                                    </a>
+                                )}
+
                             </div>
+
                         </motion.div>
+
                     </div>
+
                 </div>
-                {/* Scroll Indicator */}
+
+
+                {/* =========================
+                    PREVIOUS ARROW
+                ========================== */}
+
+                <button
+                    type="button"
+                    className="
+                        hero-prev
+
+                        absolute
+                        left-4
+                        lg:left-8
+                        top-1/2
+                        -translate-y-1/2
+
+                        z-30
+
+                        w-12
+                        h-12
+                        lg:w-14
+                        lg:h-14
+
+                        rounded-full
+
+                        border
+                        border-white/30
+
+                        bg-black/20
+                        backdrop-blur
+
+                        flex
+                        items-center
+                        justify-center
+
+                        text-white
+
+                        hover:bg-[#B6C95C]
+                        hover:border-[#B6C95C]
+
+                        transition-all
+                        duration-300
+                    "
+                    aria-label="Previous banner"
+                >
+                    <ChevronLeft
+                        size={28}
+                        strokeWidth={2}
+                    />
+                </button>
+
+
+                {/* =========================
+                    NEXT ARROW
+                ========================== */}
+
+                <button
+                    type="button"
+                    className="
+                        hero-next
+
+                        absolute
+                        right-4
+                        lg:right-8
+                        top-1/2
+                        -translate-y-1/2
+
+                        z-30
+
+                        w-12
+                        h-12
+                        lg:w-14
+                        lg:h-14
+
+                        rounded-full
+
+                        border
+                        border-white/30
+
+                        bg-black/20
+                        backdrop-blur
+
+                        flex
+                        items-center
+                        justify-center
+
+                        text-white
+
+                        hover:bg-[#B6C95C]
+                        hover:border-[#B6C95C]
+
+                        transition-all
+                        duration-300
+                    "
+                    aria-label="Next banner"
+                >
+                    <ChevronRight
+                        size={28}
+                        strokeWidth={2}
+                    />
+                </button>
+
+
+                {/* =========================
+                    SCROLL INDICATOR
+                ========================== */}
 
                 <motion.div
                     animate={{
@@ -213,6 +414,7 @@ export default function Hero({ banners }) {
                         text-white
                     "
                 >
+
                     <span
                         className="
                             text-xs
@@ -224,6 +426,7 @@ export default function Hero({ banners }) {
                         Scroll
                     </span>
 
+
                     <div
                         className="
                             w-[2px]
@@ -232,6 +435,7 @@ export default function Hero({ banners }) {
                             overflow-hidden
                         "
                     >
+
                         <motion.div
                             animate={{
                                 y: [-20, 55],
@@ -240,9 +444,14 @@ export default function Hero({ banners }) {
                                 repeat: Infinity,
                                 duration: 1.5,
                             }}
-                            className="h-5 bg-[#B6C95C]"
+                            className="
+                                h-5
+                                bg-[#B6C95C]
+                            "
                         />
+
                     </div>
+
                 </motion.div>
 
             </section>

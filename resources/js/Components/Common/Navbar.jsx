@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Menu, X, ChevronDown, Globe } from "lucide-react";
 import { Link, usePage } from "@inertiajs/react";
-import Logo from "../../../Assets/LOGO-OXALA.png";
 import { useTranslation } from "react-i18next";
 import "flag-icons/css/flag-icons.min.css";
 
@@ -28,6 +27,7 @@ export default function Navbar() {
     const { t, i18n } = useTranslation("common");
 
     const [languageOpen, setLanguageOpen] = useState(false);
+    const { settings } = usePage().props;
     return (
         <header className="bg-white border-b sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-6">
@@ -37,8 +37,8 @@ export default function Navbar() {
                     {/* Logo */}
                     <Link href="/">
                         <img
-                            src={Logo}
-                            alt="Oxala"
+                            src={`/storage/${settings.logo}`}
+                            alt={settings.company_name}
                             className="h-20"
                         />
                     </Link>

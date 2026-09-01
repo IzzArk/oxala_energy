@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminContactController;
+use App\Http\Controllers\Admin\AdminSettingController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -158,5 +159,22 @@ Route::middleware(['auth'])
 
         Route::resource('users', AdminUserController::class)
             ->except(['show']);
+    });
+
+
+
+Route::prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+
+        Route::get(
+            '/settings',
+            [AdminSettingController::class, 'index']
+        )->name('settings.index');
+
+        Route::post(
+            '/settings',
+            [AdminSettingController::class, 'update']
+        )->name('settings.update');
     });
 require __DIR__ . '/auth.php';

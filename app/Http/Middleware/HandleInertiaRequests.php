@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Models\Contact;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -48,6 +49,8 @@ class HandleInertiaRequests extends Middleware
             )
                 ->where('is_read', false)
                 ->count(),
+            'settings' => fn() =>
+            Setting::pluck('value', 'key'),
         ];
     }
 }

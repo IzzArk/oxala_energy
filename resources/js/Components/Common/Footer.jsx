@@ -1,4 +1,4 @@
-import { Link } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 import Logo from "../../../Assets/Oxala-Logo.png";
 import { useTranslation } from "react-i18next";
 
@@ -6,6 +6,8 @@ export default function Footer() {
 
     const currentYear = new Date().getFullYear();
     const { t } = useTranslation("common");
+
+    const { settings } = usePage().props;
 
     return (
         <footer className="bg-white border-t">
@@ -16,9 +18,9 @@ export default function Footer() {
 
                     <div>
                         <img
-                            src={Logo}
-                            alt="Oxala"
-                            className="h-12 mb-6"
+                            src={`/storage/${settings.logo}`}
+                            alt={settings.company_name}
+                            className="h-20 mb-2"
                         />
 
                         <p className="text-gray-600 leading-relaxed">
@@ -124,11 +126,11 @@ export default function Footer() {
                         </h4>
 
                         <p className="text-gray-600">
-                            {t("common:footer.address")}
+                            {settings.address}
                         </p>
 
                         <p className="mt-4 font-semibold text-[#23478F]">
-                            {t("common:footer.email")}
+                            {settings.email}
                         </p>
 
                     </div>

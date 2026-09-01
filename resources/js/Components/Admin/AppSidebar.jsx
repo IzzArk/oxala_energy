@@ -10,6 +10,7 @@ import {
     MessageCircle,
     Leaf,
     User,
+    Settings,
 } from "lucide-react";
 
 import { Link, usePage } from "@inertiajs/react";
@@ -87,6 +88,11 @@ export default function AppSidebar({ mobile = false }) {
             title: "Users",
             icon: User,
             href: "/admin/users",
+        },
+        {
+            title: "General Settings",
+            icon: Settings,
+            href: "/admin/settings",
         },
     ];
 
